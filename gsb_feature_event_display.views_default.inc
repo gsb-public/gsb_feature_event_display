@@ -101,6 +101,14 @@ function gsb_feature_event_display_views_default_views() {
     'gsb_event' => 'gsb_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
+  $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_event_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
@@ -118,51 +126,44 @@ function gsb_feature_event_display_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Event Test Vocab 1 (field_event_test_vocab_1) */
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['id'] = 'field_event_test_vocab_1_tid';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['table'] = 'field_data_field_event_test_vocab_1';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['field'] = 'field_event_test_vocab_1_tid';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['expose']['operator_id'] = 'field_event_test_vocab_1_tid_op';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['expose']['label'] = 'Event Test Vocab 1 (field_event_test_vocab_1)';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['expose']['operator'] = 'field_event_test_vocab_1_tid_op';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['expose']['identifier'] = 'field_event_test_vocab_1_tid';
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Event Category (field_event_category) */
+  $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
+  $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Event Category (field_event_category)';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator'] = 'field_event_category_tid_op';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['identifier'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     5 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_event_test_vocab_1_tid']['vocabulary'] = 'event_test_vocab1';
-  /* Filter criterion: Content: Event Test Vocab 2 (field_event_test_vocab_2) */
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['id'] = 'field_event_test_vocab_2_tid';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['table'] = 'field_data_field_event_test_vocab_2';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['field'] = 'field_event_test_vocab_2_tid';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['expose']['operator_id'] = 'field_event_test_vocab_2_tid_op';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['expose']['label'] = 'Event Test Vocab 2 (field_event_test_vocab_2)';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['expose']['operator'] = 'field_event_test_vocab_2_tid_op';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['expose']['identifier'] = 'field_event_test_vocab_2_tid';
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
+  /* Filter criterion: Content: Tag (field_tag) */
+  $handler->display->display_options['filters']['field_tag_tid']['id'] = 'field_tag_tid';
+  $handler->display->display_options['filters']['field_tag_tid']['table'] = 'field_data_field_tag';
+  $handler->display->display_options['filters']['field_tag_tid']['field'] = 'field_tag_tid';
+  $handler->display->display_options['filters']['field_tag_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_tag_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_tag_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tag_tid']['expose']['operator_id'] = 'field_tag_tid_op';
+  $handler->display->display_options['filters']['field_tag_tid']['expose']['label'] = 'Tag (field_tag)';
+  $handler->display->display_options['filters']['field_tag_tid']['expose']['operator'] = 'field_tag_tid_op';
+  $handler->display->display_options['filters']['field_tag_tid']['expose']['identifier'] = 'field_tag_tid';
+  $handler->display->display_options['filters']['field_tag_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     5 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_event_test_vocab_2_tid']['vocabulary'] = 'event_test_vocab2';
-  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
-  $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
-  $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_tag_tid']['vocabulary'] = 'academic_area';
 
   /* Display: Sidebar */
   $handler = $view->new_display('panel_pane', 'Sidebar', 'sidebar');
@@ -191,15 +192,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: City */
-  $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
-  $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
-  $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
-  $handler->display->display_options['fields']['field_city']['label'] = '';
-  $handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_city']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_city']['alter']['text'] = '[field_city-value], ';
-  $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
   /* Field: Content: Event Image */
   $handler->display->display_options['fields']['field_event_image']['id'] = 'field_event_image';
   $handler->display->display_options['fields']['field_event_image']['table'] = 'field_data_field_event_image';
@@ -239,15 +231,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: State */
-  $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
-  $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
-  $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
-  $handler->display->display_options['fields']['field_state']['label'] = '';
-  $handler->display->display_options['fields']['field_state']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_state']['alter']['text'] = '[field_city][field_state]';
-  $handler->display->display_options['fields']['field_state']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_state']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
