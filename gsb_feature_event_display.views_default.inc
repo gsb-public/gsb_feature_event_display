@@ -144,6 +144,7 @@ function gsb_feature_event_display_views_default_views() {
     5 => 0,
     4 => 0,
   );
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
   /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
@@ -202,7 +203,7 @@ function gsb_feature_event_display_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'panopoly_categories';
+  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
   /* Filter criterion: Content: Discipline (field_discipline) */
   $handler->display->display_options['filters']['field_discipline_tid']['id'] = 'field_discipline_tid';
   $handler->display->display_options['filters']['field_discipline_tid']['table'] = 'field_data_field_discipline';
@@ -371,6 +372,8 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['label'] = '';
+  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address']['alter']['text'] = '[field_address-locality], [field_address-administrative_area]';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_address']['settings'] = array(
