@@ -22,52 +22,6 @@ function gsb_feature_event_display_views_api() {
 }
 
 /**
- * Implements hook_flag_default_flags().
- */
-function gsb_feature_event_display_flag_default_flags() {
-  $flags = array();
-  // Exported flag: "Promote to Front Page Flag".
-  $flags['promote_to_front_page_flag'] = array(
-    'content_type' => 'node',
-    'title' => 'Promote to Front Page Flag',
-    'global' => '0',
-    'types' => array(
-      0 => 'gsb_event',
-    ),
-    'flag_short' => 'Promote to Front Page Flag',
-    'flag_long' => '',
-    'flag_message' => '',
-    'unflag_short' => 'UnPromote from Front Page Flag',
-    'unflag_long' => '',
-    'unflag_message' => '',
-    'unflag_denied_text' => '',
-    'link_type' => 'toggle',
-    'roles' => array(
-      'flag' => array(
-        0 => '2',
-      ),
-      'unflag' => array(
-        0 => '2',
-      ),
-    ),
-    'weight' => 0,
-    'show_on_form' => 0,
-    'access_author' => '',
-    'show_on_page' => 1,
-    'show_on_teaser' => 0,
-    'show_contextual_link' => FALSE,
-    'i18n' => 0,
-    'module' => 'gsb_feature_event_display',
-    'locked' => array(
-      0 => 'name',
-    ),
-    'api_version' => 2,
-  );
-  return $flags;
-
-}
-
-/**
  * Implements hook_image_default_styles().
  */
 function gsb_feature_event_display_image_default_styles() {
