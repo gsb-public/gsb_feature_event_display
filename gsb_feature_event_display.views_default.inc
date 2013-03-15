@@ -47,7 +47,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['field_event_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_event_image']['settings'] = array(
-    'image_style' => 'gsb_image_small',
+    'image_style' => '270x158',
     'image_link' => '',
   );
   /* Field: Content: Event Date */
