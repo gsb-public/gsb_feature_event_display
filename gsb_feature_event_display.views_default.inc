@@ -34,6 +34,20 @@ function gsb_feature_event_display_views_default_views() {
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
     ),
+    'field_department_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+      ),
+    ),
     'field_business_insight_topic_tid' => array(
       'bef_format' => 'bef',
       'more_options' => array(
@@ -62,20 +76,6 @@ function gsb_feature_event_display_views_default_views() {
         ),
       ),
     ),
-    'field_event_category_tid' => array(
-      'bef_format' => 'bef_ul',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-      ),
-    ),
   );
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -89,17 +89,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no upcoming events.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
-  /* Field: Content: Event Image */
-  $handler->display->display_options['fields']['field_event_image']['id'] = 'field_event_image';
-  $handler->display->display_options['fields']['field_event_image']['table'] = 'field_data_field_event_image';
-  $handler->display->display_options['fields']['field_event_image']['field'] = 'field_event_image';
-  $handler->display->display_options['fields']['field_event_image']['label'] = '';
-  $handler->display->display_options['fields']['field_event_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_event_image']['settings'] = array(
-    'image_style' => '270x158',
-    'image_link' => '',
-  );
   /* Field: Content: Event Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
@@ -159,69 +148,35 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Event Category (field_event_category) */
-  $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
-  $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
-  $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
-  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Admission Events & Info Sessions';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator'] = 'field_event_category_tid_op';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['identifier'] = 'field_event_category_tid';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Department (field_department) */
+  $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
+  $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_department_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_department_tid']['expose']['operator_id'] = 'field_department_tid_op';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['label'] = 'Department';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['operator'] = 'field_department_tid_op';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['identifier'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_department_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_event_category_tid']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['field_event_category_tid']['group_info']['label'] = 'Admission Events & Info Sessions';
-  $handler->display->display_options['filters']['field_event_category_tid']['group_info']['identifier'] = 'field_event_category_tid';
-  $handler->display->display_options['filters']['field_event_category_tid']['group_info']['widget'] = 'radios';
-  $handler->display->display_options['filters']['field_event_category_tid']['group_info']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_event_category_tid']['group_info']['group_items'] = array(
-    1 => array(
-      'title' => 'MBA',
-      'operator' => 'or',
-      'value' => array(
-        10101 => '10101',
-      ),
-    ),
-    2 => array(
-      'title' => 'MSx',
-      'operator' => 'or',
-      'value' => array(
-        10102 => '10102',
-      ),
-    ),
-    3 => array(
-      'title' => 'PhD',
-      'operator' => 'or',
-      'value' => array(
-        10103 => '10103',
-      ),
-    ),
-    4 => array(
-      'title' => 'Executive Education',
-      'operator' => 'or',
-      'value' => array(
-        10100 => '10100',
-      ),
-    ),
-    5 => array(
-      'title' => 'Academic Calendar',
-      'operator' => 'or',
-      'value' => array(
-        10098 => '10098',
-      ),
-    ),
+  $handler->display->display_options['filters']['field_department_tid']['group_info']['label'] = 'Department (field_department)';
+  $handler->display->display_options['filters']['field_department_tid']['group_info']['identifier'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_department_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
   );
-  $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
-  $handler->display->display_options['filters']['field_event_category_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
+  $handler->display->display_options['filters']['field_department_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
@@ -300,17 +255,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Event Image */
-  $handler->display->display_options['fields']['field_event_image']['id'] = 'field_event_image';
-  $handler->display->display_options['fields']['field_event_image']['table'] = 'field_data_field_event_image';
-  $handler->display->display_options['fields']['field_event_image']['field'] = 'field_event_image';
-  $handler->display->display_options['fields']['field_event_image']['label'] = '';
-  $handler->display->display_options['fields']['field_event_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_event_image']['settings'] = array(
-    'image_style' => 'gsb_event_168x100',
-    'image_link' => '',
-  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
