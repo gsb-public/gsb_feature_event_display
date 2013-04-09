@@ -37,3 +37,47 @@ function gsb_feature_event_display_module_implements_alter(&$implementations, $h
     }
   }
 }
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function gsb_feature_event_display_field_extra_fields() {
+  $extra = array();
+  // Add an extra field for iCal links.
+  $extra['node']['event']['display']['gsb_feature_event_display_ical'] = array(
+    'label' => t('iCal URL'),
+    'description' => t('A link to an iCal event'),
+    'weight' => 0,
+  );
+  return $extra;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function gsb_feature_event_display_node_view($node, $view_mode, $langcode) {
+  // Only process events.
+  if ($node->type != 'event') {
+    return;
+  }
+
+  // Add a link for the iCal event.
+  $node->content['gsb_feature_event_display_ical'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'event-ical-link',
+      ),
+    ),
+    'link' => array(
+      '#type' => 'link',
+      '#title' => t('Add to My Calendar'),
+      '#href' => 'events/ical/' . $node->nid . '/event.ics',
+      '#attributes' => array(
+        'class' => array(
+          'green-rounded-button',
+        ),
+      ),
+    ),
+  );
+}
