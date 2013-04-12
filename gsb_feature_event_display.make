@@ -6,6 +6,3 @@ libraries[iCalcreator][download][url] = http://kigkonsult.se/downloads/dl.php?f=
 
 projects[date_ical][version] = 2.4
 projects[date_ical][subdir] = contrib
-
-projects[flag][version] = 2.0
-projects[flag][subdir] = contrib
