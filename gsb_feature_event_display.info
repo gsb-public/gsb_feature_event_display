@@ -9,7 +9,6 @@ dependencies[] = date_ical
 dependencies[] = gsb_feature_event_ct
 dependencies[] = image
 dependencies[] = panopoly_core
-dependencies[] = search_api
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_content
