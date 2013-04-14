@@ -57,7 +57,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'minipanel-two-columns-wide';
+  $display->layout = 'gsb-standard-page-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -72,7 +72,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'columntwo';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'gsb_event-panel_pane_2';
     $pane->shown = TRUE;
@@ -101,7 +101,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
-    $display->panels['columntwo'][0] = 'new-1';
+    $display->panels['contentmain'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -157,13 +157,14 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'minipanel-two-columns-wide';
+  $display->layout = 'gsb-standard-page-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'columnone' => NULL,
       'columntwo' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
@@ -172,7 +173,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'columntwo';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'gsb_event-panel_pane_1';
     $pane->shown = TRUE;
@@ -203,7 +204,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
-    $display->panels['columntwo'][0] = 'new-2';
+    $display->panels['contentmain'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;
