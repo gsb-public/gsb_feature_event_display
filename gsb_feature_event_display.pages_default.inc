@@ -74,7 +74,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->pid = 'new-1';
     $pane->panel = 'columntwo';
     $pane->type = 'views_panes';
-    $pane->subtype = 'gsb_event-frontpage';
+    $pane->subtype = 'gsb_event-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -91,8 +91,6 @@ function gsb_feature_event_display_default_page_manager_pages() {
       'link_to_view' => NULL,
       'more_link' => NULL,
       'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -105,7 +103,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $display->content['new-1'] = $pane;
     $display->panels['columntwo'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['events'] = $page;

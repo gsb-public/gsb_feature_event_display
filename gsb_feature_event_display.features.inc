@@ -45,10 +45,10 @@ function gsb_feature_event_display_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '270',
-          'height' => '158',
+          'width' => 270,
+          'height' => 158,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -67,10 +67,10 @@ function gsb_feature_event_display_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '168',
-          'height' => '100',
+          'width' => 168,
+          'height' => 100,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
