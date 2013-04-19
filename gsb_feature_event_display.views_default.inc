@@ -445,109 +445,6 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_tag_tid']['vocabulary'] = 'tag';
 
-  /* Display: Sidebar */
-  $handler = $view->new_display('panel_pane', 'Sidebar', 'sidebar');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Upcoming Events';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more'] = TRUE;
-  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'View more like this';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Path */
-  $handler->display->display_options['fields']['path']['id'] = 'path';
-  $handler->display->display_options['fields']['path']['table'] = 'node';
-  $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['label'] = '';
-  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Photo */
-  $handler->display->display_options['fields']['field_image_single_public']['id'] = 'field_image_single_public';
-  $handler->display->display_options['fields']['field_image_single_public']['table'] = 'field_data_field_image_single_public';
-  $handler->display->display_options['fields']['field_image_single_public']['field'] = 'field_image_single_public';
-  $handler->display->display_options['fields']['field_image_single_public']['label'] = '';
-  $handler->display->display_options['fields']['field_image_single_public']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_single_public']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image_single_public']['settings'] = array(
-    'image_style' => 'gsb_event_168x100',
-    'image_link' => '',
-  );
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="blue-small-border"></span>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Content: Event Date */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['label'] = '';
-  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['type'] = 'date_plain';
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'medium_time',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Address */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['text'] = '[field_address-locality], [field_address-administrative_area]';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
-  );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '156';
-  $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[path]';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'GSB Content Panes';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
-  $handler->display->display_options['allow']['exposed_form'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-  $handler->display->display_options['link_to_view'] = '0';
-
   /* Display: Front Page */
   $handler = $view->new_display('panel_pane', 'Front Page', 'frontpage');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -672,6 +569,32 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no upcoming events.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: Upcoming Events */
+  $handler = $view->new_display('panel_pane', 'Upcoming Events', 'upcoming_events');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Upcoming Events';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['inherit_panels_path'] = '1';
   $export['gsb_event'] = $view;
 
