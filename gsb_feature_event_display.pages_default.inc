@@ -57,7 +57,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'gsb-standard-page-two';
+  $display->layout = 'gsb-landing-standard-page-one';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -75,7 +75,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'main';
+    $pane->panel = 'fullheader';
     $pane->type = 'views_panes';
     $pane->subtype = 'gsb_event-panel_pane_2';
     $pane->shown = TRUE;
@@ -104,7 +104,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
-    $display->panels['main'][0] = 'new-1';
+    $display->panels['fullheader'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -160,7 +160,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'gsb-standard-page-three';
+  $display->layout = 'gsb-landing-standard-page-one';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -168,6 +168,13 @@ function gsb_feature_event_display_default_page_manager_pages() {
       'columnone' => NULL,
       'columntwo' => NULL,
       'contentmain' => NULL,
+      'fullheader' => NULL,
+      'maintop' => NULL,
+      'mainmiddlefirst' => NULL,
+      'mainmiddlesecond' => NULL,
+      'mainbottom' => NULL,
+      'quicklinks' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -176,7 +183,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'contentmain';
+    $pane->panel = 'fullheader';
     $pane->type = 'views_panes';
     $pane->subtype = 'gsb_event-panel_pane_1';
     $pane->shown = TRUE;
@@ -207,9 +214,9 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-2'] = $pane;
-    $display->panels['contentmain'][0] = 'new-2';
+    $display->panels['fullheader'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-2';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['events_calendar'] = $page;
