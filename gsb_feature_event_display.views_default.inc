@@ -37,7 +37,7 @@ function gsb_feature_event_display_views_default_views() {
     'field_business_insight_topic_tid' => array(
       'bef_format' => 'bef',
       'more_options' => array(
-        'bef_select_all_none' => FALSE,
+        'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'bef_filter_description' => '',
@@ -54,7 +54,7 @@ function gsb_feature_event_display_views_default_views() {
     'field_event_category_tid' => array(
       'bef_format' => 'bef',
       'more_options' => array(
-        'bef_select_all_none' => FALSE,
+        'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'bef_filter_description' => '',
@@ -68,112 +68,10 @@ function gsb_feature_event_display_views_default_views() {
         ),
       ),
     ),
-    'field_event_series_tid' => array(
+    'field_department_tid' => array(
       'bef_format' => 'bef',
       'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_target_audience_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_discipline_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_industry_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_region_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_company_organization_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_tag_tid' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
+        'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'bef_filter_description' => '',
@@ -263,26 +161,48 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Target Audience (field_target_audience) */
-  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Admission Events ';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Field: Body (field_body) */
+  $handler->display->display_options['filters']['field_body_value']['id'] = 'field_body_value';
+  $handler->display->display_options['filters']['field_body_value']['table'] = 'field_data_field_body';
+  $handler->display->display_options['filters']['field_body_value']['field'] = 'field_body_value';
+  $handler->display->display_options['filters']['field_body_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_body_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_body_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_body_value']['expose']['operator_id'] = 'field_body_value_op';
+  $handler->display->display_options['filters']['field_body_value']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['field_body_value']['expose']['operator'] = 'field_body_value_op';
+  $handler->display->display_options['filters']['field_body_value']['expose']['identifier'] = 'search';
+  $handler->display->display_options['filters']['field_body_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Department (field_department) */
+  $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
+  $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_department_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_department_tid']['expose']['operator_id'] = 'field_department_tid_op';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['label'] = 'Admission Events';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['operator'] = 'field_department_tid_op';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['identifier'] = 'admissions';
+  $handler->display->display_options['filters']['field_department_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_department_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
   /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
@@ -292,7 +212,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator_id'] = 'field_business_insight_topic_tid_op';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Topics';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator'] = 'field_business_insight_topic_tid_op';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['identifier'] = 'field_business_insight_topic_tid';
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['identifier'] = 'topic';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['remember_roles'] = array(
     2 => '2',
@@ -307,12 +227,21 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['value'] = array(
+    10114 => '10114',
+    10115 => '10115',
+    10116 => '10116',
+    10117 => '10117',
+    10118 => '10118',
+    10119 => '10119',
+    10120 => '10120',
+  );
   $handler->display->display_options['filters']['field_event_category_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Categories';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Type of Event';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator'] = 'field_event_category_tid_op';
-  $handler->display->display_options['filters']['field_event_category_tid']['expose']['identifier'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['identifier'] = 'event_type';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['remember_roles'] = array(
     2 => '2',
@@ -321,129 +250,9 @@ function gsb_feature_event_display_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_event_category_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
-  /* Filter criterion: Content: Event Series (field_event_series) */
-  $handler->display->display_options['filters']['field_event_series_tid']['id'] = 'field_event_series_tid';
-  $handler->display->display_options['filters']['field_event_series_tid']['table'] = 'field_data_field_event_series';
-  $handler->display->display_options['filters']['field_event_series_tid']['field'] = 'field_event_series_tid';
-  $handler->display->display_options['filters']['field_event_series_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_event_series_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_event_series_tid']['expose']['operator_id'] = 'field_event_series_tid_op';
-  $handler->display->display_options['filters']['field_event_series_tid']['expose']['label'] = 'Event Series';
-  $handler->display->display_options['filters']['field_event_series_tid']['expose']['operator'] = 'field_event_series_tid_op';
-  $handler->display->display_options['filters']['field_event_series_tid']['expose']['identifier'] = 'field_event_series_tid';
-  $handler->display->display_options['filters']['field_event_series_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_event_series_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_event_series_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_event_series_tid']['vocabulary'] = 'event_series';
-  /* Filter criterion: Content: Discipline (field_discipline) */
-  $handler->display->display_options['filters']['field_discipline_tid']['id'] = 'field_discipline_tid';
-  $handler->display->display_options['filters']['field_discipline_tid']['table'] = 'field_data_field_discipline';
-  $handler->display->display_options['filters']['field_discipline_tid']['field'] = 'field_discipline_tid';
-  $handler->display->display_options['filters']['field_discipline_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_discipline_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_discipline_tid']['expose']['operator_id'] = 'field_discipline_tid_op';
-  $handler->display->display_options['filters']['field_discipline_tid']['expose']['label'] = 'Discipline';
-  $handler->display->display_options['filters']['field_discipline_tid']['expose']['operator'] = 'field_discipline_tid_op';
-  $handler->display->display_options['filters']['field_discipline_tid']['expose']['identifier'] = 'field_discipline_tid';
-  $handler->display->display_options['filters']['field_discipline_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_discipline_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_discipline_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_discipline_tid']['vocabulary'] = 'discipline';
-  /* Filter criterion: Content: Industry (field_industry) */
-  $handler->display->display_options['filters']['field_industry_tid']['id'] = 'field_industry_tid';
-  $handler->display->display_options['filters']['field_industry_tid']['table'] = 'field_data_field_industry';
-  $handler->display->display_options['filters']['field_industry_tid']['field'] = 'field_industry_tid';
-  $handler->display->display_options['filters']['field_industry_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_industry_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_industry_tid']['expose']['operator_id'] = 'field_industry_tid_op';
-  $handler->display->display_options['filters']['field_industry_tid']['expose']['label'] = 'Industries';
-  $handler->display->display_options['filters']['field_industry_tid']['expose']['operator'] = 'field_industry_tid_op';
-  $handler->display->display_options['filters']['field_industry_tid']['expose']['identifier'] = 'field_industry_tid';
-  $handler->display->display_options['filters']['field_industry_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_industry_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_industry_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_industry_tid']['vocabulary'] = 'industry';
-  /* Filter criterion: Content: Region (field_region) */
-  $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
-  $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
-  $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
-  $handler->display->display_options['filters']['field_region_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['label'] = 'Region';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['operator'] = 'field_region_tid_op';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['identifier'] = 'field_region_tid';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
-  $handler->display->display_options['filters']['field_region_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Company Organization (field_company_organization) */
-  $handler->display->display_options['filters']['field_company_organization_tid']['id'] = 'field_company_organization_tid';
-  $handler->display->display_options['filters']['field_company_organization_tid']['table'] = 'field_data_field_company_organization';
-  $handler->display->display_options['filters']['field_company_organization_tid']['field'] = 'field_company_organization_tid';
-  $handler->display->display_options['filters']['field_company_organization_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_company_organization_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_company_organization_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_company_organization_tid']['expose']['operator_id'] = 'field_company_organization_tid_op';
-  $handler->display->display_options['filters']['field_company_organization_tid']['expose']['label'] = 'Company or Organization';
-  $handler->display->display_options['filters']['field_company_organization_tid']['expose']['operator'] = 'field_company_organization_tid_op';
-  $handler->display->display_options['filters']['field_company_organization_tid']['expose']['identifier'] = 'field_company_organization_tid';
-  $handler->display->display_options['filters']['field_company_organization_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_company_organization_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_company_organization_tid']['vocabulary'] = 'company_organization';
-  /* Filter criterion: Content: Tag (field_tag) */
-  $handler->display->display_options['filters']['field_tag_tid']['id'] = 'field_tag_tid';
-  $handler->display->display_options['filters']['field_tag_tid']['table'] = 'field_data_field_tag';
-  $handler->display->display_options['filters']['field_tag_tid']['field'] = 'field_tag_tid';
-  $handler->display->display_options['filters']['field_tag_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_tag_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_tag_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_tag_tid']['expose']['operator_id'] = 'field_tag_tid_op';
-  $handler->display->display_options['filters']['field_tag_tid']['expose']['label'] = 'Tag';
-  $handler->display->display_options['filters']['field_tag_tid']['expose']['operator'] = 'field_tag_tid_op';
-  $handler->display->display_options['filters']['field_tag_tid']['expose']['identifier'] = 'field_tag_tid';
-  $handler->display->display_options['filters']['field_tag_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_tag_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_tag_tid']['vocabulary'] = 'tag';
 
   /* Display: Front Page */
   $handler = $view->new_display('panel_pane', 'Front Page', 'frontpage');
@@ -548,6 +357,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'GSB Content Panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: Listing */
   $handler = $view->new_display('panel_pane', 'Listing', 'panel_pane_2');
