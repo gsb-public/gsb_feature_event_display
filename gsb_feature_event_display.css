@@ -1,0 +1,7 @@
+#modal-content #views-exposed-pane div.form-type-bef-checkbox {
+  display: block;
+}
+
+#modal-content #views-exposed-pane div.form-type-bef-checkbox label {
+  float: none;
+}
