@@ -228,13 +228,13 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['value'] = array(
-    10114 => '10114',
-    10115 => '10115',
-    10116 => '10116',
-    10117 => '10117',
-    10118 => '10118',
-    10119 => '10119',
-    10120 => '10120',
+    10571 => '10571',
+    10576 => '10576',
+    10581 => '10581',
+    10586 => '10586',
+    10591 => '10591',
+    10596 => '10596',
+    10601 => '10601',
   );
   $handler->display->display_options['filters']['field_event_category_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
