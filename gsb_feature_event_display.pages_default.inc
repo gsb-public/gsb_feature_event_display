@@ -15,7 +15,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Events';
   $page->admin_description = '';
-  $page->path = 'events/list';
+  $page->path = 'events/list/!tag';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -32,7 +32,14 @@ function gsb_feature_event_display_default_page_manager_pages() {
       'weight' => '0',
     ),
   );
-  $page->arguments = array();
+  $page->arguments = array(
+    'tag' => array(
+      'id' => '',
+      'identifier' => '',
+      'argument' => '',
+      'settings' => array(),
+    ),
+  );
   $page->conf = array(
     'admin_paths' => FALSE,
   );
