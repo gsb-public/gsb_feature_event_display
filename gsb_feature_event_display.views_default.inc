@@ -176,28 +176,28 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
-  /* Filter criterion: Field: Body (field_body) */
-  $handler->display->display_options['filters']['field_body_value']['id'] = 'field_body_value';
-  $handler->display->display_options['filters']['field_body_value']['table'] = 'field_data_field_body';
-  $handler->display->display_options['filters']['field_body_value']['field'] = 'field_body_value';
-  $handler->display->display_options['filters']['field_body_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_body_value']['group'] = 2;
-  $handler->display->display_options['filters']['field_body_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_body_value']['expose']['operator_id'] = 'field_body_value_op';
-  $handler->display->display_options['filters']['field_body_value']['expose']['label'] = 'Search';
-  $handler->display->display_options['filters']['field_body_value']['expose']['operator'] = 'field_body_value_op';
-  $handler->display->display_options['filters']['field_body_value']['expose']['identifier'] = 'search';
-  $handler->display->display_options['filters']['field_body_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Search field (field_search_field) */
+  $handler->display->display_options['filters']['field_search_field_value']['id'] = 'field_search_field_value';
+  $handler->display->display_options['filters']['field_search_field_value']['table'] = 'field_data_field_search_field';
+  $handler->display->display_options['filters']['field_search_field_value']['field'] = 'field_search_field_value';
+  $handler->display->display_options['filters']['field_search_field_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_search_field_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_search_field_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['operator_id'] = 'field_search_field_value_op';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['operator'] = 'field_search_field_value_op';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['identifier'] = 'search';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_body_value']['expose']['autocomplete_dependent'] = 0;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Department (field_department) */
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
