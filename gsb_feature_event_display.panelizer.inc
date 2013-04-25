@@ -36,6 +36,13 @@ function gsb_feature_event_display_panelizer_defaults() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'fullheader' => NULL,
+      'maintop' => NULL,
+      'mainmiddlefirst' => NULL,
+      'mainmiddlesecond' => NULL,
+      'mainbottom' => NULL,
+      'quicklinks' => NULL,
+      'sidebar' => NULL,
     ),
   );
   $display->cache = array();
@@ -45,6 +52,52 @@ function gsb_feature_event_display_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'fullheader';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_addthis';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'addthis_basic_toolbox',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'share_services' => 'twitter, linkedin, facebook, google_plusone_share, email',
+        'buttons_size' => 'addthis_16x16_style',
+        'counter_orientation' => 'horizontal',
+        'extra_css' => '',
+      ),
+      'context' => array(),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'view_mode' => NULL,
+      'widget_title' => NULL,
+      'items_per_page' => NULL,
+      'exposed' => array(
+        'sort_by' => NULL,
+        'sort_order' => NULL,
+      ),
+      'use_pager' => NULL,
+      'pager_id' => NULL,
+      'offset' => NULL,
+      'link_to_view' => NULL,
+      'more_link' => NULL,
+      'path' => NULL,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-1'] = $pane;
+    $display->panels['fullheader'][0] = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-2';
+    $pane->panel = 'maintop';
     $pane->type = 'node_content';
     $pane->subtype = 'node_content';
     $pane->shown = TRUE;
@@ -68,8 +121,8 @@ function gsb_feature_event_display_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['fullheader'][0] = 'new-1';
+    $display->content['new-2'] = $pane;
+    $display->panels['maintop'][0] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
