@@ -7,6 +7,7 @@ project = gsb_feature_event_display
 dependencies[] = better_exposed_filters
 dependencies[] = ctools
 dependencies[] = date_ical
+dependencies[] = ds
 dependencies[] = fullcalendar
 dependencies[] = gsb_feature_event_ct
 dependencies[] = image

@@ -26,7 +26,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'name' => 'main-menu',
     'weight' => '0',
     'parent' => array(
-      'type' => 'normal',
+      'type' => 'none',
       'title' => 'Events',
       'name' => 'main-menu',
       'weight' => '0',
@@ -74,6 +74,11 @@ function gsb_feature_event_display_default_page_manager_pages() {
       'main' => NULL,
       'quicklinks' => NULL,
       'sidebar' => NULL,
+      'fullheader' => NULL,
+      'maintop' => NULL,
+      'mainmiddlefirst' => NULL,
+      'mainmiddlesecond' => NULL,
+      'mainbottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -88,7 +93,6 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'teaser',
       'widget_title' => NULL,
       'items_per_page' => NULL,
       'exposed' => array(
@@ -196,7 +200,6 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'teaser',
       'widget_title' => NULL,
       'items_per_page' => NULL,
       'exposed' => array(

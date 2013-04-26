@@ -81,3 +81,13 @@ function gsb_feature_event_display_node_view($node, $view_mode, $langcode) {
     ),
   );
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for node.tpl.php.
+ */
+function gsb_feature_event_display_preprocess_node(&$variables) {
+  // Give the event listing the same class as teaser to trick the CSS.
+  if ($variables['type'] == 'event' && $variables['view_mode'] == 'event_listing') {
+    $variables['classes_array'][] = 'view-mode-teaser';
+  }
+}
