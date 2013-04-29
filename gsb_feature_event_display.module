@@ -91,3 +91,34 @@ function gsb_feature_event_display_preprocess_node(&$variables) {
     $variables['classes_array'][] = 'view-mode-teaser';
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form().
+ */
+function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_state['view']->name == 'gsb_event') {
+    // Exclude the search text field from auto-submit.
+    $form['search']['#attributes']['class'][] = 'ctools-auto-submit-exclude';
+    // Trigger the alternate exposed form, see
+    // gsb_feature_event_display_preprocess_views_exposed_form().
+    $form['#gsb_feature_event_display'] = TRUE;
+    // Remove the ' Admissions' suffix from admissions options.
+    foreach ($form['admissions']['#options'] as &$option) {
+      $option = str_replace(' Admissions', '', $option);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views-exposed-form.tpl.php.
+ */
+function gsb_feature_event_display_preprocess_views_exposed_form(&$variables) {
+  if (isset($variables['form']['#gsb_feature_event_display'])) {
+    // Allow for an alternate template.
+    $variables['theme_hook_suggestions'][] = 'views_exposed_form__events';
+    // Split the first widget to go above the search button.
+    $variables['widgets_top'][key($variables['widgets'])] = array_shift($variables['widgets']);
+    // Put the remaining below the search button.
+    $variables['widgets_bottom'] = $variables['widgets'];
+  }
+}
