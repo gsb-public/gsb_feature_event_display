@@ -82,7 +82,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Event Calendar';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -189,7 +189,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Event Calendar';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
