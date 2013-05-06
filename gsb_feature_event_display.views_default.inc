@@ -355,6 +355,14 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
+  $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_event_date_value']['granularity'] = 'hour';
+  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_event_date_value']['year_range'] = '-0:+3';
 
   /* Display: Calendar */
   $handler = $view->new_display('panel_pane', 'Calendar', 'panel_pane_1');
