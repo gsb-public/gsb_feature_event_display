@@ -39,3 +39,4 @@ features[variable][] = panelizer_node:event_allowed_types_default
 features[variable][] = panelizer_node:event_default
 features[views_view][] = gsb_event
 features[views_view][] = gsb_event_ical_feed
+features[views_view][] = mba_admissions
