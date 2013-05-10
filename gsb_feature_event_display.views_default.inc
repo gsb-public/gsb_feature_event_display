@@ -739,25 +739,93 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['pager']['options']['use_go_to_top_text'] = 'Back to the Top';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'field_event_date' => 'field_event_date',
     'title' => 'title',
+    'field_region' => 'field_region',
+    'field_location' => 'field_location',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'field_event_date' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
-      'sortable' => 0,
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_region' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_location' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
   );
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'There are no upcoming events.';
+  /* Field: Content: Event Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = 'Date';
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'value',
+    'multiple_number' => '1',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Region */
+  $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+  $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+  $handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+  $handler->display->display_options['fields']['field_region']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_region']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_region']['delta_offset'] = '0';
+  /* Field: Content: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -772,6 +840,38 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Department (field_department) */
+  $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
+  $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['value'] = array(
+    10206 => '10206',
+  );
+  $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
+  /* Filter criterion: Content: Event Category (field_event_category) */
+  $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
+  $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
+  $handler->display->display_options['filters']['field_event_category_tid']['value'] = array(
+    10561 => '10561',
+  );
+  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
+  /* Filter criterion: Content: Target Audience (field_target_audience) */
+  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['value'] = array(
+    12221 => '12221',
+    12236 => '12236',
+  );
+  $handler->display->display_options['filters']['field_target_audience_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
   $export['mba_admissions'] = $view;
 
   return $export;
