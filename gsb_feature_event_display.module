@@ -7,6 +7,15 @@
 include_once 'gsb_feature_event_display.features.inc';
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function gsb_feature_event_display_ctools_plugin_directory($module, $plugin) {
+ if ($module == 'ctools' && !empty($plugin)) {
+   return "plugins/$plugin";
+ }
+}
+
+/**
  * Implementation of hook_form_FORM_ID_alter()
  *
  * Provides customizations to the views content type settings form

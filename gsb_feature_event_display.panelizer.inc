@@ -123,6 +123,47 @@ function gsb_feature_event_display_panelizer_defaults() {
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['maintop'][0] = 'new-2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
+    $pane->panel = 'sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'gsb_public_custom_blocks-gpcb_maps_parking_info_more';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'city',
+          'settings' => array(
+            'city' => 'Palo Alto',
+          ),
+          'context' => 'panelizer',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'city',
+          'settings' => array(
+            'city' => 'Stanford',
+          ),
+          'context' => 'panelizer',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'or',
+    );
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['sidebar'][0] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
