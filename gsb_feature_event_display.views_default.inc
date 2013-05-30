@@ -654,6 +654,10 @@ function gsb_feature_event_display_views_default_views() {
     3 => 0,
     4 => 0,
     5 => 0,
+    7 => 0,
+    6 => 0,
+    8 => 0,
+    9 => 0,
   );
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
@@ -782,7 +786,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['link_to_view'] = '1';
 
   /* Display: Calendar */
-  $handler = $view->new_display('panel_pane', 'Calendar', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'Calendar', 'event_calendar_pane');
   $handler->display->display_options['display_description'] = 'Events that have been promoted to the Front Page';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -794,6 +798,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -912,7 +917,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: Listing */
-  $handler = $view->new_display('panel_pane', 'Listing', 'panel_pane_2');
+  $handler = $view->new_display('panel_pane', 'Listing', 'event_listing_pane');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -940,6 +945,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'event_listing';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
