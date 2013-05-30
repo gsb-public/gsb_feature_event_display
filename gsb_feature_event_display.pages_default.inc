@@ -24,7 +24,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'weight' => '0',
     'parent' => array(
       'type' => 'none',
-      'title' => '',
+      'title' => 'Admission Events',
       'name' => 'navigation',
       'weight' => '0',
     ),
@@ -65,7 +65,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Admission Events';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -166,7 +166,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Admission Events';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -226,7 +226,7 @@ function gsb_feature_event_display_default_page_manager_pages() {
     'weight' => '0',
     'parent' => array(
       'type' => 'none',
-      'title' => '',
+      'title' => 'Admission Events',
       'name' => 'navigation',
       'weight' => '0',
     ),
@@ -267,11 +267,33 @@ function gsb_feature_event_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Admission Events';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-3';
+    $pane->panel = 'main';
+    $pane->type = 'block';
+    $pane->subtype = 'views-f57e1c961388184dbbe36325294a39fa';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'inherit_path' => 1,
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['main'][0] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
     $pane->panel = 'main';
     $pane->type = 'views_panes';
     $pane->subtype = 'admission_events-panel_pane_1';
@@ -301,10 +323,10 @@ function gsb_feature_event_display_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['main'][0] = 'new-3';
+    $display->content['new-4'] = $pane;
+    $display->panels['main'][1] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -368,11 +390,11 @@ function gsb_feature_event_display_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Admission Events';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-4';
+    $pane->pid = 'new-5';
     $pane->panel = 'main';
     $pane->type = 'views_panes';
     $pane->subtype = 'admission_events-panel_pane_2';
@@ -404,10 +426,10 @@ function gsb_feature_event_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['main'][0] = 'new-4';
+    $display->content['new-5'] = $pane;
+    $display->panels['main'][0] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-4';
+  $display->title_pane = 'new-5';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['msx_admission_events_past'] = $page;
