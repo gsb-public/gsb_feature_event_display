@@ -117,6 +117,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
   $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
   $handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+  $handler->display->display_options['fields']['field_region']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_region']['settings'] = array(
     'conditions' => array(
       0 => array(
