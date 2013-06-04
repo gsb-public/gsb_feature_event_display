@@ -547,10 +547,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -579,7 +575,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['table'] = 'field_data_field_search_field';
   $handler->display->display_options['filters']['field_search_field_value']['field'] = 'field_search_field_value';
   $handler->display->display_options['filters']['field_search_field_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_search_field_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_search_field_value']['group'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['operator_id'] = 'field_search_field_value_op';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['label'] = 'Search';
@@ -600,7 +596,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
-  $handler->display->display_options['filters']['field_department_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_department_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['expose']['operator_id'] = 'field_department_tid_op';
   $handler->display->display_options['filters']['field_department_tid']['expose']['label'] = 'Admission Events';
@@ -620,7 +616,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator_id'] = 'field_business_insight_topic_tid_op';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Topics';
@@ -649,7 +645,7 @@ function gsb_feature_event_display_views_default_views() {
     10596 => '10596',
     10601 => '10601',
   );
-  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Type of Event';
@@ -808,10 +804,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -833,7 +825,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['table'] = 'field_data_field_search_field';
   $handler->display->display_options['filters']['field_search_field_value']['field'] = 'field_search_field_value';
   $handler->display->display_options['filters']['field_search_field_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_search_field_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_search_field_value']['group'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['operator_id'] = 'field_search_field_value_op';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['label'] = 'Search';
@@ -854,7 +846,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
-  $handler->display->display_options['filters']['field_department_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_department_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['expose']['operator_id'] = 'field_department_tid_op';
   $handler->display->display_options['filters']['field_department_tid']['expose']['label'] = 'Admission Events';
@@ -874,7 +866,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator_id'] = 'field_business_insight_topic_tid_op';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Topics';
@@ -903,7 +895,7 @@ function gsb_feature_event_display_views_default_views() {
     10596 => '10596',
     10601 => '10601',
   );
-  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_event_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_event_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['operator_id'] = 'field_event_category_tid_op';
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['label'] = 'Type of Event';
