@@ -610,6 +610,7 @@ function gsb_feature_event_display_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
   /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
@@ -630,6 +631,7 @@ function gsb_feature_event_display_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
   /* Filter criterion: Content: Event Category (field_event_category) */
@@ -664,6 +666,7 @@ function gsb_feature_event_display_views_default_views() {
     9 => 0,
   );
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
 
@@ -860,6 +863,7 @@ function gsb_feature_event_display_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
   /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
@@ -880,6 +884,7 @@ function gsb_feature_event_display_views_default_views() {
     4 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
   /* Filter criterion: Content: Event Category (field_event_category) */
@@ -910,6 +915,7 @@ function gsb_feature_event_display_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['field_event_category_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
   $handler->display->display_options['pane_category']['name'] = 'GSB Content Panes';
