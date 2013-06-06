@@ -16,7 +16,10 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $page->admin_title = 'MBA Admission Events';
   $page->admin_description = '';
   $page->path = 'programs/mba/admission/event/upcoming';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'default tab',
     'title' => 'Admission Events',
@@ -117,7 +120,10 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $page->admin_title = 'MBA Admission Events Past';
   $page->admin_description = '';
   $page->path = 'programs/mba/admission/event/past';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Past Events',
@@ -218,7 +224,10 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $page->admin_title = 'MsX Admission Events';
   $page->admin_description = '';
   $page->path = 'programs/msx/admission/event/upcoming';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'default tab',
     'title' => 'Admission Events',
@@ -341,7 +350,10 @@ function gsb_feature_event_display_default_page_manager_pages() {
   $page->admin_title = 'MsX Admission Events Past';
   $page->admin_description = '';
   $page->path = 'programs/msx/admission/event/past';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Past Events',
