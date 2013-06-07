@@ -122,15 +122,21 @@ function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_
     }
   }
   elseif ($form_state['view']->name == 'admission_events') {
-    $op = (isset($_GET['date_op']) && $_GET['date_op'] == '<') ? 'past' : 'upcoming';
-    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
+    // Directly manipulate the exposed sorts to work with clicksort.
+    if (isset($_GET['sort_order']) && !isset($_GET['order'])) {
+      $_GET['sort'] = $_GET['sort_order'];
+      $_GET['order'] = 'field_event_date_value';
+    }
+
     $form['#attributes']['class'][] = 'exposed_filter_widget';
     $form['#attributes']['class'][] = 'exposed_filter_widget_one_column';
+
+    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
     $form['#attached']['js'][] = array(
       'type' => 'setting',
       'data' => array(
         'gsb_feature_event_display' => array(
-          'admission_event_active' => $op,
+          'admission_event_active' => (isset($_GET['date_op']) && $_GET['date_op'] == '<') ? 'past' : 'upcoming',
         ),
       ),
     );
