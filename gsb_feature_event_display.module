@@ -122,7 +122,18 @@ function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_
     }
   }
   elseif ($form_state['view']->name == 'admission_events') {
+    $op = (isset($_GET['date_op']) && $_GET['date_op'] == '<') ? 'past' : 'upcoming';
     $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
+    $form['#attributes']['class'][] = 'exposed_filter_widget';
+    $form['#attributes']['class'][] = 'exposed_filter_widget_one_column';
+    $form['#attached']['js'][] = array(
+      'type' => 'setting',
+      'data' => array(
+        'gsb_feature_event_display' => array(
+          'admission_event_active' => $op,
+        ),
+      ),
+    );
     // Force the form to always sort by date.
     $form['sort_by'] = array(
       '#type' => 'value',
