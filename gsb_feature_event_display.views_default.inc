@@ -843,7 +843,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
-  $handler->display->display_options['pane_category']['name'] = 'GSB Content Panes';
+  $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';
 
@@ -969,6 +969,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['link_to_view'] = '1';
   $handler->display->display_options['inherit_panels_path'] = '0';
+  $handler->display->display_options['pane_category']['name'] = 'Content Panes';
   $export['gsb_event'] = $view;
 
   $view = new view();
