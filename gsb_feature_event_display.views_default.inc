@@ -715,6 +715,8 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['link_to_view'] = '1';
 
   /* Display: Calendar */
@@ -919,6 +921,8 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
       'type' => 'panel',
@@ -958,6 +962,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'event_upcoming';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Content Panes';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -969,7 +974,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['link_to_view'] = '1';
   $handler->display->display_options['inherit_panels_path'] = '0';
-  $handler->display->display_options['pane_category']['name'] = 'Content Panes';
   $export['gsb_event'] = $view;
 
   $view = new view();
