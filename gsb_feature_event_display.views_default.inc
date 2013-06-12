@@ -218,7 +218,8 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid_1']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid_1']['field'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid_1']['value'] = array(
-    12501 => '12501',
+    12411 => '12411',
+    10582 => '10582',
     10581 => '10581',
     10586 => '10586',
   );
