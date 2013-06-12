@@ -168,6 +168,9 @@ function gsb_feature_event_display_gsb_fpp_customizations_icons_alter(&$icons) {
   $module_path = drupal_get_path('module', 'gsb_feature_event_display');
   $icons_settings = array(
     'views_panes:gsb_event-upcoming_events' => 'upcoming-events.png',         
+    'views_panes:gsb_event-event_calendar_pane' => 'GSB_event_calendar.png',     
+    'views_panes:gsb_event-event_listing_pane' => 'GSB_event_listing.png',     
+    'views_panes:gsb_event-frontpage' => 'GSB_event_frontpage.png',                 
   );
   foreach($icons_settings as $key => $value) {
     if (isset($icons[$key]['icon'])) {
