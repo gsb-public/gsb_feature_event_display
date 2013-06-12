@@ -163,3 +163,16 @@ function gsb_feature_event_display_preprocess_views_exposed_form(&$variables) {
     $variables['widgets_bottom'] = $variables['widgets'];
   }
 }
+
+function gsb_feature_event_display_gsb_fpp_customizations_icons_alter(&$icons) {
+  $module_path = drupal_get_path('module', 'gsb_feature_event_display');
+  $icons_settings = array(
+    'views_panes:gsb_event-upcoming_events' => 'upcoming-events.png',         
+  );
+  foreach($icons_settings as $key => $value) {
+    if (isset($icons[$key]['icon'])) {
+      $icons[$key]['icon'] = $module_path . '/images/' . $value;
+    }
+  }
+}
+
