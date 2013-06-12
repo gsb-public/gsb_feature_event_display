@@ -135,7 +135,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'european_date_format',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
