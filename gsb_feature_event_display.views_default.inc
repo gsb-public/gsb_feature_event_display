@@ -962,6 +962,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'event_upcoming';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'Event: Upcoming Events';
   $handler->display->display_options['pane_category']['name'] = 'Content Panes';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';

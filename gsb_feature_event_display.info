@@ -39,3 +39,10 @@ features[views_view][] = admission_events
 features[views_view][] = gsb_event
 features[views_view][] = gsb_event_ical_feed
 features[views_view][] = mba_admissions
+
+
+; Information added by drush on 2013-06-14
+version = "master-dev"
+project = "gsb_feature_event_display"
+datestamp = "1371226789"
+
