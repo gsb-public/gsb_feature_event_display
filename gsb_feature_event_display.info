@@ -19,7 +19,7 @@ dependencies[] = views
 dependencies[] = views_content
 dependencies[] = views_load_more
 stylesheets[all][] = gsb_feature_event_display.css
-datestamp = 1371075836
+datestamp = 1371262934
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
@@ -30,7 +30,6 @@ features[image][] = gsb_event_168x100
 features[panelizer_defaults][] = node:event:default
 features[variable][] = fullcalendar_path
 features[variable][] = panelizer_defaults_node_event
-features[variable][] = panelizer_node:event_allowed_layouts
 features[variable][] = panelizer_node:event_allowed_layouts_default
 features[variable][] = panelizer_node:event_allowed_types
 features[variable][] = panelizer_node:event_allowed_types_default
@@ -39,10 +38,3 @@ features[views_view][] = admission_events
 features[views_view][] = gsb_event
 features[views_view][] = gsb_event_ical_feed
 features[views_view][] = mba_admissions
-
-
-; Information added by drush on 2013-06-14
-version = "master-dev"
-project = "gsb_feature_event_display"
-datestamp = "1371226789"
-

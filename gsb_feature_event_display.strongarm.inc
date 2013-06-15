@@ -101,13 +101,6 @@ function gsb_feature_event_display_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'panelizer_node:event_allowed_layouts';
-  $strongarm->value = 'O:22:"panels_allowed_layouts":4:{s:9:"allow_new";b:1;s:11:"module_name";s:11:"panels_page";s:23:"allowed_layout_settings";a:49:{s:8:"flexible";b:0;s:14:"twocol_stacked";b:0;s:13:"twocol_bricks";b:0;s:6:"twocol";b:0;s:25:"threecol_33_34_33_stacked";b:0;s:17:"threecol_33_34_33";b:0;s:25:"threecol_25_50_25_stacked";b:0;s:17:"threecol_25_50_25";b:0;s:6:"onecol";b:0;s:6:"whelan";b:0;s:12:"webb_flipped";b:0;s:5:"sutro";b:0;s:13:"selby_flipped";b:0;s:5:"selby";b:0;s:4:"pond";b:0;s:15:"moscone_flipped";b:0;s:7:"moscone";b:0;s:8:"mccoppin";b:0;s:15:"hewston_flipped";b:0;s:7:"hewston";b:0;s:6:"harris";b:0;s:5:"geary";b:0;s:12:"burr_flipped";b:0;s:4:"burr";b:0;s:5:"brown";b:0;s:15:"brenham_flipped";b:0;s:7:"brenham";b:0;s:16:"bartlett_flipped";b:0;s:8:"bartlett";b:0;s:17:"sanderson_flipped";b:0;s:9:"sanderson";b:0;s:6:"boxton";b:0;s:22:"bryant_flipped_flipped";b:0;s:6:"bryant";b:0;s:6:"phelan";b:0;s:14:"taylor_flipped";b:0;s:6:"taylor";b:0;s:12:"sutro_double";b:0;s:5:"rolph";b:0;s:4:"webb";b:0;s:21:"gsb-standard-page-one";b:0;s:21:"gsb-standard-page-two";b:1;s:23:"gsb-standard-page-three";b:1;s:20:"gsb-landing-page-two";b:0;s:20:"minipanel-one-column";b:0;s:21:"gsb-business-insights";b:1;s:26:"minipanel-two-columns-wide";b:1;s:14:"gsb-front-page";b:1;s:20:"gsb-landing-page-one";b:1;}s:10:"form_state";N;}';
-  $export['panelizer_node:event_allowed_layouts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_node:event_allowed_layouts_default';
   $strongarm->value = 1;
   $export['panelizer_node:event_allowed_layouts_default'] = $strongarm;
