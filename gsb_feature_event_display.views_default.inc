@@ -129,7 +129,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No events found.';
   $handler->display->display_options['empty']['area']['format'] = 'gsb_wysiwyg_text';
-  /* Field: Content: Event Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -182,7 +182,7 @@ function gsb_feature_event_display_views_default_views() {
       ),
     ),
   );
-  /* Sort criterion: Content: Event Date -  start date (field_event_date) */
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -248,7 +248,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid_1']['vocabulary'] = 'event_category';
-  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
+  /* Filter criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -423,6 +423,23 @@ function gsb_feature_event_display_views_default_views() {
         ),
       ),
     ),
+    'field_region_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 1,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
   );
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -440,7 +457,7 @@ function gsb_feature_event_display_views_default_views() {
     'image_style' => '270x158',
     'image_link' => '',
   );
-  /* Field: Content: Event Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -468,7 +485,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '156';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Event Date -  start date (field_event_date) */
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -487,7 +504,7 @@ function gsb_feature_event_display_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
+  /* Filter criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -614,17 +631,18 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
-  /* Filter criterion: Content: Target Audience (field_target_audience) */
-  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Target Audience';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['operator'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['identifier'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -635,8 +653,8 @@ function gsb_feature_event_display_views_default_views() {
     8 => 0,
     9 => 0,
   );
-  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
 
   /* Display: Front Page */
   $handler = $view->new_display('panel_pane', 'Front Page', 'frontpage');
@@ -663,7 +681,7 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Event Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -729,7 +747,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
+  /* Filter criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -932,7 +950,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'There are no upcoming events.';
   $handler->display->display_options['empty']['area']['format'] = 'gsb_wysiwyg_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Event Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
@@ -1152,7 +1170,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = 'There are no upcoming events.';
-  /* Field: Content: Event Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
