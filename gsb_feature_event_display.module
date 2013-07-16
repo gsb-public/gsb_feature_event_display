@@ -147,6 +147,12 @@ function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_
     );
     // Prevent the date value from being exposed.
     $form['date'] = array('#type' => 'value');
+
+    // Submit field_department_tid value from Pane settings.
+    $form['field_department_tid'] = array(
+      '#type' => 'hidden',
+      '#value' => $form_state['input']['field_department_tid'],
+    );
   }
 }
 
@@ -167,10 +173,10 @@ function gsb_feature_event_display_preprocess_views_exposed_form(&$variables) {
 function gsb_feature_event_display_gsb_fpp_customizations_icons_alter(&$icons) {
   $module_path = drupal_get_path('module', 'gsb_feature_event_display');
   $icons_settings = array(
-    'views_panes:gsb_event-upcoming_events' => 'upcoming-events.png',         
-    'views_panes:gsb_event-event_calendar_pane' => 'GSB_event_calendar.png',     
-    'views_panes:gsb_event-event_listing_pane' => 'GSB_event_listing.png',     
-    'views_panes:gsb_event-frontpage' => 'GSB_event_frontpage.png',                 
+    'views_panes:gsb_event-upcoming_events' => 'upcoming-events.png',
+    'views_panes:gsb_event-event_calendar_pane' => 'GSB_event_calendar.png',
+    'views_panes:gsb_event-event_listing_pane' => 'GSB_event_listing.png',
+    'views_panes:gsb_event-frontpage' => 'GSB_event_frontpage.png',
   );
   foreach($icons_settings as $key => $value) {
     if (isset($icons[$key]['icon'])) {

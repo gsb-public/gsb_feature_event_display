@@ -289,7 +289,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_department_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['expose']['operator_id'] = 'field_department_tid_op';
-  $handler->display->display_options['filters']['field_department_tid']['expose']['label'] = 'Department';
   $handler->display->display_options['filters']['field_department_tid']['expose']['operator'] = 'field_department_tid_op';
   $handler->display->display_options['filters']['field_department_tid']['expose']['identifier'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['expose']['remember_roles'] = array(
@@ -299,14 +298,18 @@ function gsb_feature_event_display_views_default_views() {
     16 => 0,
     21 => 0,
     61 => 0,
-    71 => 0,
     56 => 0,
+    71 => 0,
     66 => 0,
     26 => 0,
+    31 => 0,
+    36 => 0,
     41 => 0,
     46 => 0,
-    76 => 0,
+    51 => 0,
+    81 => 0,
     86 => 0,
+    91 => 0,
   );
   $handler->display->display_options['filters']['field_department_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
@@ -325,9 +328,9 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['exposed_form_overrides'] = array(
-    'field_event_date_value' => 'exposed',
-    'field_department_tid' => '',
     'field_event_category_tid_1' => 'exposed',
+    'field_event_date_value' => 'exposed',
+    'field_department_tid' => 'pane_and_exposed',
   );
   $export['admission_events'] = $view;
 
