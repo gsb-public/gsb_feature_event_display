@@ -225,7 +225,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_event_category_tid_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['operator_id'] = 'field_event_category_tid_1_op';
-  $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['label'] = 'Filter by';
+  $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['label'] = 'Type of Event';
   $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['operator'] = 'field_event_category_tid_1_op';
   $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['identifier'] = 'category';
   $handler->display->display_options['filters']['field_event_category_tid_1']['expose']['multiple'] = TRUE;
