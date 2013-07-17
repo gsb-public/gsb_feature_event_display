@@ -521,6 +521,12 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
+  $handler->display->display_options['filters']['field_department_tid']['value'] = array(
+    10201 => '10201',
+    10206 => '10206',
+    10211 => '10211',
+    10216 => '10216',
+  );
   $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_department_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['expose']['operator_id'] = 'field_department_tid_op';
@@ -531,10 +537,24 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
+    11 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    56 => 0,
+    71 => 0,
+    66 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    91 => 0,
   );
+  $handler->display->display_options['filters']['field_department_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
