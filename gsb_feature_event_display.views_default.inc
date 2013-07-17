@@ -188,6 +188,10 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_event_date_value']['expose']['label'] = 'Date sort';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -314,6 +318,18 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
+  /* Filter criterion: Content: Region (field_region:delta) */
+  $handler->display->display_options['filters']['delta_1']['id'] = 'delta_1';
+  $handler->display->display_options['filters']['delta_1']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['delta_1']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['delta_1']['group'] = 2;
+  /* Filter criterion: Content: Region (field_region:delta) */
+  $handler->display->display_options['filters']['delta']['id'] = 'delta';
+  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['delta']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
+  $handler->display->display_options['filters']['delta']['group'] = 2;
 
   /* Display: Pane */
   $handler = $view->new_display('panel_pane', 'Pane', 'pane');
