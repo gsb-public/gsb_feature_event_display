@@ -191,7 +191,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
-  );
+  );  
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -654,6 +654,13 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
   $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
   $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['value'] = array(
+    10916 => '10916',
+    11231 => '11231',
+    11511 => '11511',
+    11801 => '11801',
+    12071 => '12071',
+  );
   $handler->display->display_options['filters']['field_region_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
@@ -664,14 +671,24 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-    8 => 0,
-    9 => 0,
+    11 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    56 => 0,
+    71 => 0,
+    66 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    91 => 0,
   );
+  $handler->display->display_options['filters']['field_region_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
 
