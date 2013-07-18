@@ -671,6 +671,13 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+    8 => 0,
+    9 => 0,    
     11 => 0,
     16 => 0,
     21 => 0,
