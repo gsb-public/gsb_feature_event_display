@@ -191,7 +191,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
-  );  
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -520,6 +520,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'academic_calendar_event' => 'academic_calendar_event',
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
@@ -620,9 +621,10 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['value'] = array(
+    10556 => '10556',
     10571 => '10571',
     10576 => '10576',
-    10582 => '10582',    
+    10582 => '10582',
     10581 => '10581',
     10586 => '10586',
     10591 => '10591',
@@ -678,7 +680,7 @@ function gsb_feature_event_display_views_default_views() {
     7 => 0,
     6 => 0,
     8 => 0,
-    9 => 0,    
+    9 => 0,
     11 => 0,
     16 => 0,
     21 => 0,
@@ -854,6 +856,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
+    'academic_calendar_event' => 'academic_calendar_event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Search field (field_search_field) */
@@ -980,9 +983,8 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'event_listing';
-  $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
