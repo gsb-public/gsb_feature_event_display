@@ -4,7 +4,7 @@ core = 7.x
 libraries[iCalcreator][download][type] = get
 libraries[iCalcreator][download][url] = http://kigkonsult.se/downloads/dl.php?f=iCalcreator-2.16.6
 
-projects[date_ical][version] = 2.8
+projects[date_ical][version] = 2.9
 projects[date_ical][subdir] = contrib
 
 projects[fullcalendar][version] = 2.x-dev
