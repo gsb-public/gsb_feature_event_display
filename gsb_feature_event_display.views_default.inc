@@ -835,6 +835,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'fullcalendar';
   $handler->display->display_options['style_options']['right'] = '';
+  $handler->display->display_options['style_options']['timeformat'] = 'h:mmtt{ - h:mmtt}';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
