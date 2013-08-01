@@ -108,7 +108,7 @@ function gsb_feature_event_display_views_default_views() {
       'empty_column' => 0,
     ),
     'field_address' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
