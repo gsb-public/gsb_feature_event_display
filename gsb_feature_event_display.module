@@ -122,8 +122,6 @@ function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_
     }
   }
   elseif ($form_state['view']->name == 'admission_events') {
-    // Prefix for filters form.
-    $form['#prefix'] = '<strong>' . t('Filter by') . '</strong>';
 
     // Directly manipulate the exposed sorts to work with clicksort.
     if (isset($_GET['sort_order']) && !isset($_GET['order'])) {
