@@ -6,6 +6,12 @@
  */
 Drupal.behaviors.gsb_feature_event_display_admission_events = {
   attach: function (context, settings) {
+
+    this.initAdmissionsSelectLink();
+    this.initTopicSelectLink();
+    this.initEventSelectLink();
+    this.initRegionSelectLink();
+
     var $view;
     var $context = $(context);
     // The view is either the context itself.
@@ -39,7 +45,175 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
       $view.find('#edit-sort-order').val('DESC');
       $view.find('.ctools-auto-submit-click').click();
     });
-  }
+  },
+
+  initAdmissionsSelectLink: function() {
+
+    var select_link_admissions = $('.form-item-admissions .bef-select-all-none .bef-toggle');
+    if (select_link_admissions.length) {
+
+      var selAll = Drupal.t('Show Only Admission Events');
+      var selNone = Drupal.t('Remove Admission Filters');
+
+      var new_select_link = $('.form-item-admissions .bef-select-all-none .not-bef-toggle');
+      if (new_select_link.length == 0) {
+        select_link_admissions.after('<a class="not-bef-toggle select-all" href="#">'+ selAll +'</a>');
+        select_link_admissions.hide();    
+        new_select_link = $('.form-item-admissions .bef-select-all-none .not-bef-toggle');    
+      }
+
+      new_select_link.click(function(event) {
+
+        var new_select_link_classes = new_select_link.attr("class");
+        console.log('class = '+new_select_link_classes);
+
+        if (new_select_link_classes.indexOf('select-all') != -1) {
+          new_select_link.removeClass('select-all');
+          new_select_link.addClass('select-none');
+          new_select_link.text(selNone);
+        } else if (new_select_link_classes.indexOf('select-none') != -1) {
+          new_select_link.removeClass('select-none');
+          new_select_link.addClass('select-all');
+          new_select_link.text(selAll);
+        }
+
+        // Don't actually follow the link...
+        event.preventDefault();
+        event.stopPropagation();
+
+        select_link_admissions.click();
+
+      });
+
+    } 
+
+  },
+
+  initTopicSelectLink: function() {
+
+    var select_link_topic = $('.form-item-topic .bef-select-all-none .bef-toggle');
+    if (select_link_topic.length) {
+
+      var selAll = Drupal.t('Show Only Topical Events');
+      var selNone = Drupal.t('Remove Topical Filters');
+
+      var new_select_link = $('.form-item-topic .bef-select-all-none .not-bef-toggle');
+      if (new_select_link.length == 0) {
+        select_link_topic.after('<a class="not-bef-toggle select-all" href="#">'+ selAll +'</a>');
+        select_link_topic.hide();    
+        new_select_link = $('.form-item-topic .bef-select-all-none .not-bef-toggle');    
+      }
+
+      new_select_link.click(function(event) {
+
+        var new_select_link_classes = new_select_link.attr("class");
+        console.log('class = '+new_select_link_classes);
+
+        if (new_select_link_classes.indexOf('select-all') != -1) {
+          new_select_link.removeClass('select-all');
+          new_select_link.addClass('select-none');
+          new_select_link.text(selNone);
+        } else if (new_select_link_classes.indexOf('select-none') != -1) {
+          new_select_link.removeClass('select-none');
+          new_select_link.addClass('select-all');
+          new_select_link.text(selAll);
+        }
+
+        // Don't actually follow the link...
+        event.preventDefault();
+        event.stopPropagation();
+
+        select_link_topic.click();
+
+      });
+
+    }
+
+  },
+
+  initEventSelectLink: function() {
+
+    var select_link_event_type = $('.form-item-event-type .bef-select-all-none .bef-toggle');
+    if (select_link_event_type.length) {
+
+      var selAll = Drupal.t('Show Only Typical Events');
+      var selNone = Drupal.t('Remove Typical Filters');
+
+      var new_select_link = $('.form-item-event-type .bef-select-all-none .not-bef-toggle');
+      if (new_select_link.length == 0) {
+        select_link_event_type.after('<a class="not-bef-toggle select-all" href="#">'+ selAll +'</a>');
+        select_link_event_type.hide();    
+        new_select_link = $('.form-item-event-type .bef-select-all-none .not-bef-toggle');    
+      }
+
+      new_select_link.click(function(event) {
+
+        var new_select_link_classes = new_select_link.attr("class");
+        console.log('class = '+new_select_link_classes);
+
+        if (new_select_link_classes.indexOf('select-all') != -1) {
+          new_select_link.removeClass('select-all');
+          new_select_link.addClass('select-none');
+          new_select_link.text(selNone);
+        } else if (new_select_link_classes.indexOf('select-none') != -1) {
+          new_select_link.removeClass('select-none');
+          new_select_link.addClass('select-all');
+          new_select_link.text(selAll);
+        }
+
+        // Don't actually follow the link...
+        event.preventDefault();
+        event.stopPropagation();
+
+        select_link_event_type.click();
+
+      });
+
+    }   
+
+  },  
+
+  initRegionSelectLink: function() {
+
+    var select_link_region = $('.form-item-field-region-tid .bef-select-all-none .bef-toggle');
+    if (select_link_region.length) {
+
+      var selAll = Drupal.t('Show Only Regional Events');
+      var selNone = Drupal.t('Remove Regional Filters');
+
+      var new_select_link = $('.form-item-field-region-tid .bef-select-all-none .not-bef-toggle');
+      if (new_select_link.length == 0) {
+        select_link_region.after('<a class="not-bef-toggle select-all" href="#">'+ selAll +'</a>');
+        select_link_region.hide();    
+        new_select_link = $('.form-item-field-region-tid .bef-select-all-none .not-bef-toggle');    
+      }
+
+      new_select_link.click(function(event) {
+
+        var new_select_link_classes = new_select_link.attr("class");
+        console.log('class = '+new_select_link_classes);
+
+        if (new_select_link_classes.indexOf('select-all') != -1) {
+          new_select_link.removeClass('select-all');
+          new_select_link.addClass('select-none');
+          new_select_link.text(selNone);
+        } else if (new_select_link_classes.indexOf('select-none') != -1) {
+          new_select_link.removeClass('select-none');
+          new_select_link.addClass('select-all');
+          new_select_link.text(selAll);
+        }
+
+        // Don't actually follow the link...
+        event.preventDefault();
+        event.stopPropagation();
+
+        select_link_region.click();
+
+      });
+
+    }
+  },
+
 };
 
 }(jQuery));
