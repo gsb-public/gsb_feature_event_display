@@ -110,7 +110,11 @@ function gsb_feature_event_display_preprocess_node(&$variables) {
  * Implements hook_form_FORM_ID_alter() for views_exposed_form().
  */
 function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+
   if ($form_state['view']->name == 'gsb_event') {
+
+    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
+
     // Exclude the search text field from auto-submit.
     $form['search']['#attributes']['class'][] = 'ctools-auto-submit-exclude';
     // Trigger the alternate exposed form, see
