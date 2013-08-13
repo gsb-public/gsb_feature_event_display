@@ -63,7 +63,7 @@ function gsb_feature_event_display_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'share_services' => 'twitter, linkedin, facebook, google_plusone_share, email',
+        'share_services' => 'twitter, linkedin, facebook, google_plusone_share, compact',
         'buttons_size' => 'addthis_16x16_style',
         'counter_orientation' => 'horizontal',
         'extra_css' => '',
