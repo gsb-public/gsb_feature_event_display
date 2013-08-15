@@ -94,8 +94,8 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
     var select_link_topic = $('.form-item-topic .bef-select-all-none .bef-toggle');
     if (select_link_topic.length) {
 
-      var selAll = Drupal.t('Show Only Topical Events');
-      var selNone = Drupal.t('Remove Topical Filters');
+      var selAll = Drupal.t('Show All Topic-Related Events');
+      var selNone = Drupal.t('Remove Topic Filters');
 
       var new_select_link = $('.form-item-topic .bef-select-all-none .not-bef-toggle');
       if (new_select_link.length == 0) {
@@ -136,8 +136,8 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
     var select_link_event_type = $('.form-item-event-type .bef-select-all-none .bef-toggle');
     if (select_link_event_type.length) {
 
-      var selAll = Drupal.t('Show Only Typical Events');
-      var selNone = Drupal.t('Remove Typical Filters');
+      var selAll = Drupal.t('Show All Event Types');
+      var selNone = Drupal.t('Remove All Event Type Filters');
 
       var new_select_link = $('.form-item-event-type .bef-select-all-none .not-bef-toggle');
       if (new_select_link.length == 0) {
