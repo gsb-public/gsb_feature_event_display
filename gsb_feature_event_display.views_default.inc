@@ -191,7 +191,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
-  );  
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -504,7 +504,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '156';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_event_date) */
+  /* Sort criterion: Content: Date -  start date (field_event_date) */  
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
@@ -622,7 +622,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['value'] = array(
     10571 => '10571',
     10576 => '10576',
-    10582 => '10582',    
+    10582 => '10582',
     10581 => '10581',
     10586 => '10586',
     10591 => '10591',
@@ -678,7 +678,7 @@ function gsb_feature_event_display_views_default_views() {
     7 => 0,
     6 => 0,
     8 => 0,
-    9 => 0,    
+    9 => 0,
     11 => 0,
     16 => 0,
     21 => 0,
@@ -699,6 +699,40 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_region_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
+  /* Filter criterion: Content: Target Audience (field_target_audience) */
+  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Target Audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    56 => 0,
+    71 => 0,
+    66 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    91 => 0,
+    96 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
 
   /* Display: Front Page */
   $handler = $view->new_display('panel_pane', 'Front Page', 'frontpage');
@@ -819,10 +853,48 @@ function gsb_feature_event_display_views_default_views() {
     12221 => '12221',
     12236 => '12236',
   );
+  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Target Audience (field_target_audience)';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    56 => 0,
+    71 => 0,
+    66 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    91 => 0,
+    96 => 0,
+    101 => 0,
+  );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['link_to_view'] = '1';
 
   /* Display: Calendar */
