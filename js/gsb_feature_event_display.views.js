@@ -62,6 +62,14 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
         new_select_link = $('.form-item-admissions .bef-select-all-none .not-bef-toggle');    
       }
 
+	  // Retain the select-none
+      var totalcheckboxes = $('.form-item-admissions .form-type-bef-checkbox').length;
+      $('.form-item-admissions .form-type-bef-checkbox').each(function( index ) {
+        if ($( ".form-item-admissions .form-type-bef-checkbox input:checked" ).length == totalcheckboxes){
+          new_select_link.text(selNone);
+        }
+      });
+
       new_select_link.click(function(event) {
 
         var new_select_link_classes = new_select_link.attr("class");
@@ -104,6 +112,14 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
         new_select_link = $('.form-item-topic .bef-select-all-none .not-bef-toggle');    
       }
 
+	  // Retain the select-none
+      var totalcheckboxes = $('.form-item-topic .form-type-bef-checkbox').length;
+      $('.form-item-topic .form-type-bef-checkbox').each(function( index ) {
+        if ($( ".form-item-topic .form-type-bef-checkbox input:checked" ).length == totalcheckboxes){
+          new_select_link.text(selNone);
+        }
+      });
+
       new_select_link.click(function(event) {
 
         var new_select_link_classes = new_select_link.attr("class");
@@ -145,6 +161,14 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
         select_link_event_type.hide();    
         new_select_link = $('.form-item-event-type .bef-select-all-none .not-bef-toggle');    
       }
+
+	  // Retain the select-none
+      var totalcheckboxes = $('.form-item-event-type .form-type-bef-checkbox').length;
+      $('.form-item-event-type .form-type-bef-checkbox').each(function( index ) {
+        if ($( ".form-item-event-type .form-type-bef-checkbox input:checked" ).length == totalcheckboxes){
+          new_select_link.text(selNone);
+        }
+      });
 
       new_select_link.click(function(event) {
 
