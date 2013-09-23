@@ -73,7 +73,6 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
       new_select_link.click(function(event) {
 
         var new_select_link_classes = new_select_link.attr("class");
-        console.log('class = '+new_select_link_classes);
 
         if (new_select_link_classes.indexOf('select-all') != -1) {
           new_select_link.removeClass('select-all');
@@ -123,7 +122,6 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
       new_select_link.click(function(event) {
 
         var new_select_link_classes = new_select_link.attr("class");
-        console.log('class = '+new_select_link_classes);
 
         if (new_select_link_classes.indexOf('select-all') != -1) {
           new_select_link.removeClass('select-all');
@@ -173,7 +171,6 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
       new_select_link.click(function(event) {
 
         var new_select_link_classes = new_select_link.attr("class");
-        console.log('class = '+new_select_link_classes);
 
         if (new_select_link_classes.indexOf('select-all') != -1) {
           new_select_link.removeClass('select-all');
@@ -215,7 +212,6 @@ Drupal.behaviors.gsb_feature_event_display_admission_events = {
       new_select_link.click(function(event) {
 
         var new_select_link_classes = new_select_link.attr("class");
-        console.log('class = '+new_select_link_classes);
 
         if (new_select_link_classes.indexOf('select-all') != -1) {
           new_select_link.removeClass('select-all');
