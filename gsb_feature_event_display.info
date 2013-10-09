@@ -1,7 +1,6 @@
 name = GSB Feature Event Display
 core = 7.x
 package = GSB
-php = 5.2.4
 version = 7.x-1.0
 project = gsb_feature_event_display
 dependencies[] = better_exposed_filters
@@ -23,7 +22,7 @@ features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
-features[features_api][] = api:1
+features[features_api][] = api:2
 features[image][] = event_detail_270x158
 features[image][] = gsb_event_168x100
 features[panelizer_defaults][] = node:event:default

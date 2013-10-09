@@ -7,16 +7,13 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function gsb_feature_event_display_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function gsb_feature_event_display_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -25,7 +22,7 @@ function gsb_feature_event_display_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function gsb_feature_event_display_views_api() {
+function gsb_feature_event_display_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -55,6 +52,7 @@ function gsb_feature_event_display_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'event_detail_270x158',
   );
 
   // Exported image style: gsb_event_168x100.
@@ -77,6 +75,7 @@ function gsb_feature_event_display_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'gsb_event_168x100',
   );
 
   return $styles;

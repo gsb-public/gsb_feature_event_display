@@ -191,7 +191,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
-  );  
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -622,7 +622,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['value'] = array(
     10571 => '10571',
     10576 => '10576',
-    10582 => '10582',    
+    10582 => '10582',
     10581 => '10581',
     10586 => '10586',
     10591 => '10591',
@@ -678,7 +678,7 @@ function gsb_feature_event_display_views_default_views() {
     7 => 0,
     6 => 0,
     8 => 0,
-    9 => 0,    
+    9 => 0,
     11 => 0,
     16 => 0,
     21 => 0,
@@ -820,7 +820,7 @@ function gsb_feature_event_display_views_default_views() {
     12226 => '12226',
     12236 => '12236',
     12251 => '12251',
-   );
+  );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
   $handler->display->display_options['pane_category']['name'] = 'Other';
@@ -1095,7 +1095,7 @@ function gsb_feature_event_display_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Event Date -  start date (field_event_date) */
+  /* Filter criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
