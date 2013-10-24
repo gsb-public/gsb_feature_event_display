@@ -594,27 +594,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator_id'] = 'field_business_insight_topic_tid_op';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Topics';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator'] = 'field_business_insight_topic_tid_op';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['identifier'] = 'topic';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
   /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
@@ -651,54 +630,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
-  /* Filter criterion: Content: Region (field_region) */
-  $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
-  $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
-  $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
-  $handler->display->display_options['filters']['field_region_tid']['value'] = array(
-    10916 => '10916',
-    11231 => '11231',
-    11511 => '11511',
-    11801 => '11801',
-    12071 => '12071',
-  );
-  $handler->display->display_options['filters']['field_region_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['label'] = 'Region';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['operator'] = 'field_region_tid_op';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['identifier'] = 'field_region_tid';
-  $handler->display->display_options['filters']['field_region_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-    8 => 0,
-    9 => 0,
-    11 => 0,
-    16 => 0,
-    21 => 0,
-    61 => 0,
-    56 => 0,
-    71 => 0,
-    66 => 0,
-    26 => 0,
-    31 => 0,
-    36 => 0,
-    41 => 0,
-    46 => 0,
-    51 => 0,
-    81 => 0,
-    86 => 0,
-    91 => 0,
-  );
-  $handler->display->display_options['filters']['field_region_tid']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
 
   /* Display: Front Page */
   $handler = $view->new_display('panel_pane', 'Front Page', 'frontpage');
@@ -912,27 +843,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator_id'] = 'field_business_insight_topic_tid_op';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Topics';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator'] = 'field_business_insight_topic_tid_op';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['identifier'] = 'topic';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
   /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
