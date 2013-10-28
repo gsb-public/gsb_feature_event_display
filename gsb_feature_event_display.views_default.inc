@@ -750,7 +750,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
   $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
   $handler->display->display_options['filters']['field_target_audience_tid']['value'] = array(
-    12221 => '12221',
     12226 => '12226',
     12236 => '12236',
     12251 => '12251',
