@@ -15,4 +15,4 @@ projects[fullcalendar][download][revision] = aee5cb9
 projects[fullcalendar][download][branch] = 7.x-2.x
 
 libraries[fullcalendar][download][type] = get
-libraries[fullcalendar][download][url] = http://arshaw.com/fullcalendar/downloads/fullcalendar-1.6.0.zip
+libraries[fullcalendar][download][url] = https://github.com/arshaw/fullcalendar/releases/download/v1.6.0/fullcalendar-1.6.0.zip
