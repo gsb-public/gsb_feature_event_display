@@ -126,8 +126,8 @@ function gsb_feature_event_display_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'gsb_public_custom_blocks-gpcb_maps_parking_info_more';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'uuid:8146d349-5a57-4d25-801d-90beac176072';
     $pane->shown = TRUE;
     $pane->access = array(
       'plugins' => array(
@@ -151,8 +151,7 @@ function gsb_feature_event_display_panelizer_defaults() {
       'logic' => 'or',
     );
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'view_mode' => 'full',
     );
     $pane->cache = array();
     $pane->style = array(
