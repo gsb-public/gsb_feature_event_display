@@ -178,7 +178,6 @@ function gsb_feature_event_display_strongarm() {
     'block-gsb_public_custom_blocks-gpcb_visit_us' => 'block-gsb_public_custom_blocks-gpcb_visit_us',
     'block-gsb_public_custom_blocks-gpcb_rethink' => 'block-gsb_public_custom_blocks-gpcb_rethink',
     'block-gsb_public_custom_blocks-gpcb_follow_us' => 'block-gsb_public_custom_blocks-gpcb_follow_us',
-    'block-apps-manage_apps__panopoly' => 0,
     'block-gsb_feature_faculty_display-az_list' => 0,
     'block-menu-devel' => 0,
     'block-menu-features' => 0,
@@ -1051,7 +1050,6 @@ function gsb_feature_event_display_strongarm() {
     'views_panes-gsb_event-frontpage' => 'views_panes-gsb_event-frontpage',
     'views_panes-gsb_media_mention-media_mentions' => 'views_panes-gsb_media_mention-media_mentions',
     'views_panes-search_faculty-panel_pane_1' => 'views_panes-search_faculty-panel_pane_1',
-    'views_panes-panopoly_taxonomy-taxonomy_content' => 0,
   );
   $export['panelizer_node:event_allowed_types'] = $strongarm;
 
