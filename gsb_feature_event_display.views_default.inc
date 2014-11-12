@@ -1448,7 +1448,7 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_event_series_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_series_tid']['vocabulary'] = 'event_series';
-  $handler->display->display_options['pane_title'] = 'Event: Upcoming Events';
+  $handler->display->display_options['pane_title'] = 'Events: Multiple Criteria';
   $handler->display->display_options['pane_category']['name'] = 'Content Panes';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
