@@ -5,7 +5,7 @@ libraries[iCalcreator][download][type] = git
 libraries[iCalcreator][download][url] = git@github.com:iCalcreator/iCalcreator.git
 libraries[iCalcreator][download][revision] = 579ee62eb
 
-projects[date_ical][version] = 2.13
+projects[date_ical][version] = 3.3
 projects[date_ical][subdir] = contrib
 
 projects[fullcalendar][version] = 2.x-dev
