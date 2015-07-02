@@ -1,7 +1,7 @@
 name = GSB Feature Event Display
 core = 7.x
 package = GSB
-version = 7.x-5.01
+version = 7.x-5.06
 project = gsb_feature_event_display
 dependencies[] = better_exposed_filters
 dependencies[] = ctools
@@ -36,4 +36,3 @@ features[views_view][] = admission_events
 features[views_view][] = gsb_event
 features[views_view][] = gsb_event_ical_feed
 features[views_view][] = mba_admissions
-mtime = 1420661870
