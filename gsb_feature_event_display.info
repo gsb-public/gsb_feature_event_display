@@ -1,7 +1,7 @@
 name = GSB Feature Event Display
 core = 7.x
 package = GSB
-version = 7.x-5.06
+version = 7.x-5.07
 project = gsb_feature_event_display
 dependencies[] = better_exposed_filters
 dependencies[] = ctools
