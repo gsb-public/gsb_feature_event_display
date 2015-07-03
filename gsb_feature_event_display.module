@@ -116,9 +116,9 @@ function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_
     $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
 
     // Remove the ' Admissions' suffix from admissions options.
-    foreach ($form['admissions']['#options'] as &$option) {
-      $option = str_replace(' Admissions', '', $option);
-    }
+//    foreach ($form['admissions']['#options'] as &$option) {
+//      $option = str_replace(' Admissions', '', $option);
+//    }
   }
   elseif ($form_state['view']->name == 'admission_events') {
 
