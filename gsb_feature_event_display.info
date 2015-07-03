@@ -28,6 +28,7 @@ features[image][] = gsb_event_168x100
 features[panelizer_defaults][] = node:event:default
 features[variable][] = fullcalendar_path
 features[variable][] = panelizer_defaults_node_event
+features[variable][] = panelizer_node:event_allowed_layouts
 features[variable][] = panelizer_node:event_allowed_layouts_default
 features[variable][] = panelizer_node:event_allowed_types
 features[variable][] = panelizer_node:event_allowed_types_default
