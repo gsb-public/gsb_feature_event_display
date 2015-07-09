@@ -26,7 +26,6 @@ features[features_api][] = api:2
 features[image][] = event_detail_270x158
 features[image][] = gsb_event_168x100
 features[variable][] = fullcalendar_path
-features[views_view][] = admission_events
 features[views_view][] = gsb_event
 features[views_view][] = gsb_event_ical_feed
 features[views_view][] = mba_admissions
