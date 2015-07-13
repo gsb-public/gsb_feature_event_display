@@ -171,3 +171,7 @@ function gsb_feature_event_display_gsb_fpp_customizations_icons_alter(&$icons) {
   }
 }
 
+function gsb_feature_event_display_format_date($raw_value, $object) {
+  $date = date('l, F j, Y', strtotime($raw_value));
+  return $date;
+}
