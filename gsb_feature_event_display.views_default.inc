@@ -575,7 +575,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field collection item: Address */
+  /* Field: Field: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
@@ -592,6 +592,15 @@ function gsb_feature_event_display_views_default_views() {
       ),
     ),
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Promoted to front page */
+  $handler->display->display_options['sorts']['promote']['id'] = 'promote';
+  $handler->display->display_options['sorts']['promote']['table'] = 'node';
+  $handler->display->display_options['sorts']['promote']['field'] = 'promote';
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
+  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -619,7 +628,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_event_date_value']['granularity'] = 'second';
   $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Event Type (field_event_category) */
+  /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -702,7 +711,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: : field_department (field_department) */
+  /* Filter criterion: Content: Department (field_department) */
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
@@ -760,7 +769,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Event Type (field_event_category) */
+  /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -915,7 +924,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: : field_department (field_department) */
+  /* Filter criterion: Content: Department (field_department) */
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
@@ -973,7 +982,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Event Type (field_event_category) */
+  /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -1152,7 +1161,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: : field_department (field_department) */
+  /* Filter criterion: Content: Department (field_department) */
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
@@ -1227,7 +1236,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
-  /* Filter criterion: Content: Event Type (field_event_category) */
+  /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -1355,7 +1364,7 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
-  /* Filter criterion: : field_event_series (field_event_series) */
+  /* Filter criterion: Content: Event Series (field_event_series) */
   $handler->display->display_options['filters']['field_event_series_tid']['id'] = 'field_event_series_tid';
   $handler->display->display_options['filters']['field_event_series_tid']['table'] = 'field_data_field_event_series';
   $handler->display->display_options['filters']['field_event_series_tid']['field'] = 'field_event_series_tid';
@@ -2005,7 +2014,7 @@ function gsb_feature_event_display_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: : field_department (field_department) */
+  /* Filter criterion: Content: Department (field_department) */
   $handler->display->display_options['filters']['field_department_tid']['id'] = 'field_department_tid';
   $handler->display->display_options['filters']['field_department_tid']['table'] = 'field_data_field_department';
   $handler->display->display_options['filters']['field_department_tid']['field'] = 'field_department_tid';
@@ -2015,7 +2024,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Event Type (field_event_category) */
+  /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
