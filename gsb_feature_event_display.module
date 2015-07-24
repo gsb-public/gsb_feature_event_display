@@ -23,7 +23,37 @@ function gsb_feature_event_display_ctools_plugin_directory($module, $plugin) {
 function gsb_feature_event_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
   // Remove the default value for upcoming events.
   if (in_array($form_state['subtype_name'], array('gsb_event-upcoming_events'))) {
-    $form['content_settings']['view_mode']['#default_value'] = '';
+   // $form['content_settings']['view_mode']['#default_value'] = '';
+    //---------
+    $view_modes = $form['view_mode']['#options'];
+    foreach($view_modes as $key=>$value) {
+      if($key !== 'compact' AND $key !== 'expanded'){
+        unset($form['view_mode']['#options'][$key]);
+      }
+    }
+    $conf = $form_state['conf'];
+    $title_link_default_value = '';
+    if (!empty($conf['title_link'])) {
+      $title_link_default_value = $conf['title_link'];
+    }
+    else if (!empty($conf['exposed']['title_link'])) {
+      $title_link_default_value = $conf['exposed']['title_link'];
+    }
+    $form['exposed']['arguments']['#weight'] = 90;
+    $item['title_link'] = array(
+      '#title' => t('URL'),
+      '#type' => 'textfield',
+      '#weight' => -99,
+      '#default_value' => !empty($conf['title_link']) ? $conf['title_link'] : '',
+    );
+    $form['override_title']['#weight'] = -99;
+    $form['items_per_page']['#weight'] = -98;
+    $form['view_mode']['#weight'] = -98;
+    $form['exposed']['#weight'] = -97;
+    $form = gsb_misc_fixes_associative_insert($form, 'override_title_text', $item);
+    $form['comments']['#access'] = FALSE;
+    $form['links']['#access'] = FALSE;
+//-----------
   }
 
   if (isset($form["display_settings"])) {
