@@ -27,6 +27,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -1270,8 +1271,10 @@ function gsb_feature_event_display_views_default_views() {
     211 => 0,
     251 => 0,
   );
+  $handler->display->display_options['filters']['field_target_audience_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['error_message'] = FALSE;
   /* Filter criterion: Field collection item: Location Type (field_event_location_type) */
   $handler->display->display_options['filters']['field_event_location_type_value']['id'] = 'field_event_location_type_value';
   $handler->display->display_options['filters']['field_event_location_type_value']['table'] = 'field_data_field_event_location_type';
