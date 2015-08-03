@@ -136,55 +136,7 @@ function gsb_feature_event_display_preprocess_node(&$variables) {
   }
 }
 
-/**
- * Implements hook_form_FORM_ID_alter() for views_exposed_form().
- */
-function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
 
-  if ($form_state['view']->name == 'gsb_event') {
-
-    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
-
-    // Remove the ' Admissions' suffix from admissions options.
-//    foreach ($form['admissions']['#options'] as &$option) {
-//      $option = str_replace(' Admissions', '', $option);
-//    }
-  }
-  elseif ($form_state['view']->name == 'admission_events') {
-
-    // Directly manipulate the exposed sorts to work with clicksort.
-    if (isset($_GET['sort_order']) && !isset($_GET['order'])) {
-      $_GET['sort'] = $_GET['sort_order'];
-      $_GET['order'] = 'field_event_date_value';
-    }
-
-    $form['#attributes']['class'][] = 'exposed_filter_widget';
-    $form['#attributes']['class'][] = 'exposed_filter_widget_one_column';
-
-    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_event_display') . '/js/gsb_feature_event_display.views.js';
-    $form['#attached']['js'][] = array(
-      'type' => 'setting',
-      'data' => array(
-        'gsb_feature_event_display' => array(
-          'admission_event_active' => (isset($_GET['date_op']) && $_GET['date_op'] == '<') ? 'past' : 'upcoming',
-        ),
-      ),
-    );
-    // Force the form to always sort by date.
-    $form['sort_by'] = array(
-      '#type' => 'value',
-      '#value' => 'field_event_date_value',
-    );
-    // Prevent the date value from being exposed.
-    $form['date'] = array('#type' => 'value');
-
-    // Submit field_department_tid value from Pane settings.
-    $form['field_department_tid'] = array(
-      '#type' => 'hidden',
-      '#value' => $form_state['input']['field_department_tid'],
-    );
-  }
-}
 
 function gsb_feature_event_display_gsb_fpp_customizations_icons_alter(&$icons) {
   $module_path = drupal_get_path('module', 'gsb_feature_event_display');
