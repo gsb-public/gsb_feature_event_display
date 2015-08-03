@@ -536,6 +536,12 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_event_location_type' => 'field_event_location_type',
+    'field_address' => 'field_address',
+  );
+  $handler->display->display_options['row_options']['separator'] = '<span class="pipe">|</span>';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
@@ -568,17 +574,40 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Location Type */
+  $handler->display->display_options['fields']['field_event_location_type']['id'] = 'field_event_location_type';
+  $handler->display->display_options['fields']['field_event_location_type']['table'] = 'field_data_field_event_location_type';
+  $handler->display->display_options['fields']['field_event_location_type']['field'] = 'field_event_location_type';
+  $handler->display->display_options['fields']['field_event_location_type']['relationship'] = 'field_event_location_value';
+  $handler->display->display_options['fields']['field_event_location_type']['label'] = '';
+  $handler->display->display_options['fields']['field_event_location_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_location_type']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_event_location_type']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Field: Field collection item: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['relationship'] = 'field_event_location_value';
   $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_address']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_address']['type'] = 'gsb_field_formatter_address_city_state';
+  $handler->display->display_options['fields']['field_address']['type'] = 'gsb_field_formatter_address_custom';
   $handler->display->display_options['fields']['field_address']['settings'] = array(
+    'display_address_line1' => 0,
+    'display_address_line2' => 0,
+    'display_city' => 1,
+    'display_state' => 1,
+    'display_post_code' => 0,
+    'display_country' => 1,
+    'hide_usa_country' => 1,
     'conditions' => array(
       0 => array(
         'condition' => '',
