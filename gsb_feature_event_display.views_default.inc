@@ -542,7 +542,14 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'compact';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|promote';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'compact';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
@@ -652,6 +659,11 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
   $handler->display->display_options['pane_title'] = 'Front: Event List';
   $handler->display->display_options['pane_category']['name'] = 'Custom Blocks';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -769,7 +781,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Event Category (field_event_category) */
+  /* Filter criterion: Content: Event Type (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -982,7 +994,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Event Category (field_event_category) */
+  /* Filter criterion: Content: Event Type (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -2024,7 +2036,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
-  /* Filter criterion: Content: Event Category (field_event_category) */
+  /* Filter criterion: Content: Event Type (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
