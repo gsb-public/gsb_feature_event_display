@@ -22,7 +22,6 @@ features[image][] = gsb_event_168x100
 features[variable][] = fullcalendar_path
 features[views_view][] = gsb_event
 features[views_view][] = gsb_event_ical_feed
-features[views_view][] = mba_admissions
 features_exclude[dependencies][date_ical] = date_ical
 features_exclude[dependencies][ds] = ds
 features_exclude[dependencies][views] = views
