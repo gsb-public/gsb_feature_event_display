@@ -784,6 +784,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
+  $handler->display->display_options['filters']['field_department_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
@@ -815,6 +816,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
+  $handler->display->display_options['filters']['field_event_category_tid']['error_message'] = FALSE;
   $handler->display->display_options['pane_title'] = 'Events (Calendar)';
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -997,6 +999,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
+  $handler->display->display_options['filters']['field_department_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Event Category (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
@@ -1033,6 +1036,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_event_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_event_category_tid']['vocabulary'] = 'event_category';
+  $handler->display->display_options['filters']['field_event_category_tid']['error_message'] = FALSE;
   /* Filter criterion: Content: Keywords (field_tag) */
   $handler->display->display_options['filters']['field_tag_tid']['id'] = 'field_tag_tid';
   $handler->display->display_options['filters']['field_tag_tid']['table'] = 'field_data_field_tag';
@@ -1465,6 +1469,7 @@ function gsb_feature_event_display_views_default_views() {
     191 => 0,
   );
   $handler->display->display_options['filters']['field_tag_tid']['vocabulary'] = 'tag';
+  $handler->display->display_options['filters']['field_tag_tid']['error_message'] = FALSE;
   $handler->display->display_options['pane_title'] = 'Events: Multiple Criteria';
   $handler->display->display_options['pane_category']['name'] = 'Customizable Content Lists';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -1832,6 +1837,7 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['error_message'] = FALSE;
   $handler->display->display_options['pane_title'] = 'Main Events List';
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
