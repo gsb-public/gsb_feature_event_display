@@ -153,7 +153,16 @@ function gsb_feature_event_display_gsb_fpp_customizations_icons_alter(&$icons) {
   }
 }
 
+/**
+ * Used for grouping the events in main list (includes converting db date to local timezone)
+ */
 function gsb_feature_event_display_format_date($raw_value, $object) {
+
+  $date = new DateObject($raw_value, 'UTC', DATE_FORMAT_DATETIME);
+  date_timezone_set($date, timezone_open('America/Los_Angeles'));
+
+  $raw_value = date_format_date($date, 'custom', DATE_FORMAT_DATETIME);
+
   $date = date('l, F j, Y', strtotime($raw_value));
   return $date;
 }
