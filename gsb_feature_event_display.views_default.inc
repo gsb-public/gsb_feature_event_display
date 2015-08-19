@@ -785,7 +785,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
   $handler->display->display_options['filters']['field_department_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Event Category (field_event_category) */
+  /* Filter criterion: Content: Event Type (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -1000,7 +1000,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_department_tid']['vocabulary'] = 'department';
   $handler->display->display_options['filters']['field_department_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Event Category (field_event_category) */
+  /* Filter criterion: Content: Event Type (field_event_category) */
   $handler->display->display_options['filters']['field_event_category_tid']['id'] = 'field_event_category_tid';
   $handler->display->display_options['filters']['field_event_category_tid']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['filters']['field_event_category_tid']['field'] = 'field_event_category_tid';
@@ -1622,6 +1622,11 @@ function gsb_feature_event_display_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1635,7 +1640,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'academic_calendar_event' => 'academic_calendar_event',
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
@@ -1773,7 +1777,12 @@ function gsb_feature_event_display_views_default_views() {
     206 => 0,
     211 => 0,
     251 => 0,
+    256 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
   );
+  $handler->display->display_options['filters']['field_event_location_type_value']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Content: Open to (field_target_audience) */
   $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
   $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
@@ -1834,10 +1843,36 @@ function gsb_feature_event_display_views_default_views() {
     206 => 0,
     211 => 0,
     251 => 0,
+    256 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
   );
+  $handler->display->display_options['filters']['field_target_audience_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
   $handler->display->display_options['filters']['field_target_audience_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'academic_calendar_event' => 'academic_calendar_event',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Content: Date -  start date (field_event_date) */
+  $handler->display->display_options['filters']['field_event_date_value_1']['id'] = 'field_event_date_value_1';
+  $handler->display->display_options['filters']['field_event_date_value_1']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value_1']['field'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value_1']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_event_date_value_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_event_date_value_1']['default_date'] = '12AM today';
   $handler->display->display_options['pane_title'] = 'Main Events List';
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
