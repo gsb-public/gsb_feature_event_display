@@ -1493,7 +1493,7 @@ function gsb_feature_event_display_views_default_views() {
       'field_tag_tid' => '',
     ),
   );
-  $handler->display->display_options['link_to_view'] = '1';
+  $handler->display->display_options['link_to_view'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '0';
 
   /* Display: Main Events List */

@@ -32,13 +32,6 @@ function gsb_feature_event_display_form_views_content_views_panes_content_type_e
       }
     }
     $conf = $form_state['conf'];
-    $title_link_default_value = '';
-    if (!empty($conf['title_link'])) {
-      $title_link_default_value = $conf['title_link'];
-    }
-    else if (!empty($conf['exposed']['title_link'])) {
-      $title_link_default_value = $conf['exposed']['title_link'];
-    }
     $form['exposed']['arguments']['#weight'] = 90;
     $item['title_link'] = array(
       '#title' => t('URL'),
@@ -53,6 +46,7 @@ function gsb_feature_event_display_form_views_content_views_panes_content_type_e
     $form = gsb_misc_fixes_associative_insert($form, 'override_title_text', $item);
     $form['comments']['#access'] = FALSE;
     $form['links']['#access'] = FALSE;
+    $form['#submit'][] = 'gsb_feature_event_display_form_submit';
 //-----------
   }
 
@@ -66,6 +60,29 @@ function gsb_feature_event_display_form_views_content_views_panes_content_type_e
   }
   if (isset($form["content_settings"])) {
     $form["content_settings"]['#access'] = FALSE;
+  }
+}
+
+/**
+ * Submit handler for views_content_views_panes_content_type_edit_form.
+ *  - Save title link field in pane config.
+ */
+function gsb_feature_event_display_form_submit($form, &$form_state) {
+  $form_state['conf']['title_link'] = $form_state['values']['title_link'];
+}
+
+/**
+ * Implements hook_panels_pane_content_alter().
+ *  - Alter Event Filters content pane title to be linked to a custom URL.
+ */
+function gsb_feature_event_display_panels_pane_content_alter($content, $pane, $args, $context) {
+  if ($content && $content->subtype == 'gsb_event-upcoming_events') {
+    if (!empty($pane->configuration['title_link'])) {
+      $url_parts = drupal_parse_url($pane->configuration['title_link']);
+      // Don't sanitize the title. It will get sanitized later.
+      $url_parts['html'] = TRUE;
+      $content->title = l($content->title, $url_parts['path'], $url_parts);
+    }
   }
 }
 
