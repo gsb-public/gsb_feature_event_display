@@ -1201,10 +1201,9 @@ function gsb_feature_event_display_views_default_views() {
     ),
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
-    2 => 'AND',
+    2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1219,17 +1218,10 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'academic_calendar_event' => 'academic_calendar_event',
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_event_date) */
-  $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
-  $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_event_date_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = '12AM today';
   /* Filter criterion: Content: Search field (field_search_field) */
   $handler->display->display_options['filters']['field_search_field_value']['id'] = 'field_search_field_value';
   $handler->display->display_options['filters']['field_search_field_value']['table'] = 'field_data_field_search_field';
@@ -1436,20 +1428,6 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
   $handler->display->display_options['filters']['field_target_audience_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
-  $handler->display->display_options['filters']['status_1']['table'] = 'node';
-  $handler->display->display_options['filters']['status_1']['field'] = 'status';
-  $handler->display->display_options['filters']['status_1']['value'] = '1';
-  $handler->display->display_options['filters']['status_1']['group'] = 2;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'node';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'academic_calendar_event' => 'academic_calendar_event',
-  );
-  $handler->display->display_options['filters']['type_1']['group'] = 2;
   /* Filter criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['filters']['field_event_date_value_1']['id'] = 'field_event_date_value_1';
   $handler->display->display_options['filters']['field_event_date_value_1']['table'] = 'field_data_field_event_date';
@@ -1457,6 +1435,14 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value_1']['operator'] = '>=';
   $handler->display->display_options['filters']['field_event_date_value_1']['group'] = 2;
   $handler->display->display_options['filters']['field_event_date_value_1']['default_date'] = '12AM today';
+  /* Filter criterion: Content: Date - end date (field_event_date:value2) */
+  $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
+  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
+  $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_event_date_value2']['group'] = 2;
+  $handler->display->display_options['filters']['field_event_date_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_event_date_value2']['default_date'] = '12AM today';
   $handler->display->display_options['pane_title'] = 'Main Events List';
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
