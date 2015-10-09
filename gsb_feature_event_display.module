@@ -122,6 +122,12 @@ function gsb_feature_event_display_node_view($node, $view_mode, $langcode) {
     return;
   }
 
+  // hide time zone and find local time for all day
+  if (_gsb_feature_event_display_check_date_all_day($node->field_event_date)) {
+    $node->content['field_time_zone']['#access'] = FALSE;
+    $node->content['find_local_time']['#access'] = FALSE;
+  }
+
   // Add a link for the iCal event.
   $node->content['gsb_feature_event_display_ical'] = array(
     '#type' => 'container',
@@ -182,4 +188,12 @@ function gsb_feature_event_display_format_date($raw_value, $object) {
 
   $date = date('l, F j, Y', strtotime($raw_value));
   return $date;
+}
+
+/**
+ * Check date all day
+ */
+function _gsb_feature_event_display_check_date_all_day($date_field) {
+  // hide time zone and find local time for all day
+  return date_is_all_day($date_field['und'][0]['value'], $date_field['und'][0]['value2']);
 }
