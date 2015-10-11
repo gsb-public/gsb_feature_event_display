@@ -194,6 +194,11 @@ function gsb_feature_event_display_format_date($raw_value, $object) {
  * Check date all day
  */
 function _gsb_feature_event_display_check_date_all_day($date_field) {
+  $start_date = date_create($date_field['und'][0]['value']);
+  date_sub($start_date, date_interval_create_from_date_string('7 hours'));
+  $end_date = date_create($date_field['und'][0]['value2']);
+  date_sub($end_date, date_interval_create_from_date_string('7 hours'));
+
   // hide time zone and find local time for all day
-  return date_is_all_day($date_field['und'][0]['value'], $date_field['und'][0]['value2']);
+  return date_is_all_day(date_format($start_date, 'Y-m-d H:i:s'), date_format($end_date, 'Y-m-d H:i:s'));
 }
