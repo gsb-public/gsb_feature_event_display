@@ -23,8 +23,6 @@ function gsb_feature_event_display_ctools_plugin_directory($module, $plugin) {
 function gsb_feature_event_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
   // Remove the default value for upcoming events.
   if (in_array($form_state['subtype_name'], array('gsb_event-upcoming_events'))) {
-   // $form['content_settings']['view_mode']['#default_value'] = '';
-    //---------
     $view_modes = $form['view_mode']['#options'];
     foreach($view_modes as $key=>$value) {
       if($key !== 'compact' AND $key !== 'expanded'){
@@ -47,7 +45,6 @@ function gsb_feature_event_display_form_views_content_views_panes_content_type_e
     $form['comments']['#access'] = FALSE;
     $form['links']['#access'] = FALSE;
     $form['#submit'][] = 'gsb_feature_event_display_form_submit';
-//-----------
   }
 
   if (isset($form["display_settings"])) {
@@ -201,4 +198,21 @@ function _gsb_feature_event_display_check_date_all_day($date_field) {
 
   // hide time zone and find local time for all day
   return date_is_all_day(date_format($start_date, 'Y-m-d H:i:s'), date_format($end_date, 'Y-m-d H:i:s'));
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form.
+ */
+function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_state['view']->name == 'gsb_event' && $form_state['view']->current_display == 'main_event_list_pane') {
+    $form['#action'] = '';
+    $form['secondary']['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+    );
+    $form['secondary']['clear-all'] = array(
+      '#type' => 'button',
+      '#value' => t('Clear All'),
+    );
+  }
 }
