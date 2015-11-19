@@ -1083,6 +1083,7 @@ function gsb_feature_event_display_views_default_views() {
   /* Display: Main Events List */
   $handler = $view->new_display('panel_pane', 'Main Events List', 'main_event_list_pane');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
