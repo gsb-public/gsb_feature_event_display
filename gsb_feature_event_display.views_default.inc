@@ -1640,6 +1640,8 @@ function gsb_feature_event_display_views_default_views() {
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Stanford Graduate School of Business Events';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -1653,7 +1655,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['row_options']['date_field'] = 'field_event_date';
   $handler->display->display_options['row_options']['guid_field_options'] = array(
     'guid_field' => 'nid',
-    'guid_field_is_permalink' => 0,
+    'guid_field_is_permalink' => 1,
   );
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1712,13 +1714,12 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['ui_name'] = 'pubDate';
   $handler->display->display_options['fields']['field_event_date']['label'] = '';
-  $handler->display->display_options['fields']['field_event_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_event_date']['alter']['text'] = '[field_event_date-value]';
+  $handler->display->display_options['fields']['field_event_date']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_event_date']['element_type'] = '0';
   $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_event_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
     'format_type' => 'pubdate',
     'fromto' => 'value',
@@ -1726,6 +1727,7 @@ function gsb_feature_event_display_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
     'show_remaining_days' => 0,
+    'show_repeat_rule' => 'hide',
     'conditions' => array(
       0 => array(
         'condition' => '',
@@ -1739,6 +1741,8 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['ui_name'] = 'GUID';
   $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'http://gsb.stanford.edu/node/[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: link */
   $handler->display->display_options['fields']['path']['id'] = 'path';
@@ -1791,6 +1795,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_event_date_value']['default_date'] = '12AM today';
   $handler->display->display_options['path'] = 'events/rss';
+  $handler->display->display_options['sitename_title'] = 0;
   $export['gsb_event'] = $view;
 
   return $export;
