@@ -216,3 +216,9 @@ function gsb_feature_event_display_form_views_exposed_form_alter(&$form, &$form_
     );
   }
 }
+
+function gsb_feature_event_display_panels_pane_prerender($pane) {
+  if ($pane->subtype == 'gsb_event-frontpage') {
+    $pane->configuration['path'] = 'events';
+  }
+}

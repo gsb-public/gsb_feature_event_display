@@ -1,7 +1,7 @@
 name = GSB Feature Event Display
 core = 7.x
 package = GSB
-version = 7.x-6.01
+version = 7.x-6.02
 project = gsb_feature_event_display
 dependencies[] = better_exposed_filters
 dependencies[] = fullcalendar
@@ -9,7 +9,7 @@ dependencies[] = gsb_feature_event_ct
 dependencies[] = views_content
 dependencies[] = views_load_more
 stylesheets[all][] = gsb_feature_event_display.css
-datestamp = 1461859570
+datestamp = 1464274586
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
