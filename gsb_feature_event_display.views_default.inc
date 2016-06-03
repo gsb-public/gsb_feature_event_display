@@ -682,6 +682,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Custom Blocks';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['link_to_view'] = '1';
+  $handler->display->display_options['inherit_panels_path'] = '0';
 
   /* Display: Upcoming Events */
   $handler = $view->new_display('panel_pane', 'Upcoming Events', 'upcoming_events');
