@@ -523,6 +523,7 @@ function gsb_feature_event_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  $handler->display->display_options['inherit_panels_path'] = '0';
 
   /* Display: Front Page */
   $handler = $view->new_display('panel_pane', 'Front Page', 'frontpage');
