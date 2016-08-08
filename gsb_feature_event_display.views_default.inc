@@ -1707,6 +1707,25 @@ function gsb_feature_event_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_event_date_1']['delta_offset'] = '0';
+  /* Field: Content: Event Location */
+  $handler->display->display_options['fields']['field_event_location']['id'] = 'field_event_location';
+  $handler->display->display_options['fields']['field_event_location']['table'] = 'field_data_field_event_location';
+  $handler->display->display_options['fields']['field_event_location']['field'] = 'field_event_location';
+  $handler->display->display_options['fields']['field_event_location']['label'] = '';
+  $handler->display->display_options['fields']['field_event_location']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_location']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_event_location']['alter']['preserve_tags'] = '<span>';
+  $handler->display->display_options['fields']['field_event_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_location']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_event_location']['settings'] = array(
+    'view_mode' => 'rss',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_event_location']['delta_offset'] = '0';
   /* Field: Description */
   $handler->display->display_options['fields']['field_editorial_summary']['id'] = 'field_editorial_summary';
   $handler->display->display_options['fields']['field_editorial_summary']['table'] = 'field_data_field_editorial_summary';
@@ -1714,7 +1733,7 @@ function gsb_feature_event_display_views_default_views() {
   $handler->display->display_options['fields']['field_editorial_summary']['ui_name'] = 'Description';
   $handler->display->display_options['fields']['field_editorial_summary']['label'] = '';
   $handler->display->display_options['fields']['field_editorial_summary']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_editorial_summary']['alter']['text'] = '[field_event_date_1] - [field_editorial_summary]';
+  $handler->display->display_options['fields']['field_editorial_summary']['alter']['text'] = '[field_event_date_1]: <div class="event-location">[field_event_location]</div> - [field_editorial_summary]';
   $handler->display->display_options['fields']['field_editorial_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_editorial_summary']['settings'] = array(
     'conditions' => array(
