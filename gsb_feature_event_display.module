@@ -222,3 +222,21 @@ function gsb_feature_event_display_panels_pane_prerender($pane) {
     $pane->configuration['path'] = 'events';
   }
 }
+
+//altering main event list to display multi-day events multiple times
+
+function gsb_feature_event_display_views_pre_render($view){
+  if ($view->name == 'gsb_event' && $view->current_display == 'main_event_list_pane') {
+
+    $today = new DateTime();
+
+    foreach($view->result AS $k => $result) {
+
+      $start_date = new DateTime($result->field_data_field_event_date_field_event_date_value);
+
+      if ($start_date < $today) {
+        $result->field_data_field_event_date_field_event_date_value = date_format($today,"Y/m/d H:i:s");
+      }
+    }
+  }
+}
