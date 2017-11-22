@@ -31,19 +31,31 @@ function gsb_feature_event_display_form_views_content_views_panes_content_type_e
     }
     $conf = $form_state['conf'];
     $form['exposed']['arguments']['#weight'] = 90;
-    $item['title_link'] = array(
+    $form['CTA'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('CTA'),
+    );
+    $form['CTA']['cta_title'] = array(
+      '#title' => t('Text'),
+      '#type' => 'textfield',
+      '#description' => 'Enter an action statement.',
+      '#weight' => 1,
+      '#default_value' => !empty($conf['cta_title']) ? $conf['cta_title'] : '',
+    );
+    $form['CTA']['cta_url'] = array(
       '#title' => t('URL'),
       '#type' => 'textfield',
-      '#weight' => -99,
-      '#default_value' => !empty($conf['title_link']) ? $conf['title_link'] : '',
+      '#weight' => 2,
+      '#default_value' => !empty($conf['cta_url']) ? $conf['cta_url'] : '',
     );
     $form['override_title']['#weight'] = -99;
     $form['items_per_page']['#weight'] = -98;
     $form['view_mode']['#weight'] = -98;
     $form['exposed']['#weight'] = -97;
-    $form = gsb_misc_fixes_associative_insert($form, 'override_title_text', $item);
     $form['comments']['#access'] = FALSE;
     $form['links']['#access'] = FALSE;
+
+    $form['#validate'][] = 'gsb_feature_event_display_form_validate';
     $form['#submit'][] = 'gsb_feature_event_display_form_submit';
   }
 
@@ -61,11 +73,24 @@ function gsb_feature_event_display_form_views_content_views_panes_content_type_e
 }
 
 /**
+ * Implements hook_form_FORM_ID_validate().
+ */
+function gsb_feature_event_display_form_validate($form, &$form_state) {
+  if ($form_state['values']['cta_title'] != '' && $form_state['values']['cta_url'] == '') {
+    form_set_error('cta_url', t('CTA Url is required.'));
+  }
+  if ($form_state['values']['cta_title'] == '' && $form_state['values']['cta_url'] != '') {
+    form_set_error('cta_title', t('CTA title is required.'));
+  }
+}
+
+/**
  * Submit handler for views_content_views_panes_content_type_edit_form.
  *  - Save title link field in pane config.
  */
 function gsb_feature_event_display_form_submit($form, &$form_state) {
-  $form_state['conf']['title_link'] = $form_state['values']['title_link'];
+  $form_state['conf']['cta_url'] = $form_state['values']['cta_url'];
+  $form_state['conf']['cta_title'] = $form_state['values']['cta_title'];
 }
 
 /**
@@ -74,11 +99,10 @@ function gsb_feature_event_display_form_submit($form, &$form_state) {
  */
 function gsb_feature_event_display_panels_pane_content_alter($content, $pane, $args, $context) {
   if ($content && $content->subtype == 'gsb_event-upcoming_events') {
-    if (!empty($pane->configuration['title_link'])) {
-      $url_parts = drupal_parse_url($pane->configuration['title_link']);
-      // Don't sanitize the title. It will get sanitized later.
+    if (!empty($pane->configuration['cta_title'])) {
+      $url_parts = drupal_parse_url($pane->configuration['cta_url']);
       $url_parts['html'] = TRUE;
-      $content->title = l($content->title, $url_parts['path'], $url_parts);
+      $content->content['#markup'] .= '<div class="list-cta">' . l($pane->configuration['cta_title'], $url_parts['path'], $url_parts) . '</div>';
     }
   }
 }
