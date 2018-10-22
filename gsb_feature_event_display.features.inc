@@ -43,6 +43,11 @@ function gsb_feature_event_display_image_default_styles() {
         ),
         'weight' => 1,
       ),
+      2 => array(
+        'name' => 'kraken_optimize',
+        'data' => array(),
+        'weight' => 2,
+      ),
     ),
     'label' => 'event_detail_270x158',
   );
@@ -57,6 +62,11 @@ function gsb_feature_event_display_image_default_styles() {
           'height' => 100,
         ),
         'weight' => 1,
+      ),
+      2 => array(
+        'name' => 'kraken_optimize',
+        'data' => array(),
+        'weight' => 2,
       ),
     ),
     'label' => 'gsb_event_168x100',
