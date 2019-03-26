@@ -20,14 +20,14 @@
         "type": "package",
         "package": {
             "name": "arshaw/fullcalendar",
-            "version": "master",
+            "version": "v1.6.0",
             "type": "drupal-gsb-library", 
             "dist": {
                 "url": "https://github.com/arshaw/fullcalendar/releases/download/v1.6.0/fullcalendar-1.6.0.zip",
                 "type": "zip"
             }
         }
-    },
+    }
   ],  
   "require": {
     "php": ">=5.3.0",
@@ -38,7 +38,7 @@
   "extra": {
     "installer-paths": {
       "web/profiles/gsb_public/libraries/{$name}/": ["type:drupal-gsb-library"],
-      "web/profiles/gsb_public/modules/contrib/{$name}/": ["type:drupal-module"],
+      "web/profiles/gsb_public/modules/contrib/{$name}/": ["type:drupal-module"]
     }
   } 
 }
