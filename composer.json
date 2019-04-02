@@ -7,7 +7,7 @@
     {
         "type": "package",
         "package": {
-            "name": "icalcreator/icalcreator",
+            "name": "iCalcreator/iCalcreator",
             "version": "master",
             "type": "drupal-gsb-library", 
             "source": {
@@ -16,11 +16,24 @@
                "reference": "master"
             }
         }
+    },
+    {
+        "type": "package",
+        "package": {
+            "name": "arshaw/fullcalendar",
+            "version": "v1.6.0",
+            "type": "vcs", 
+            "dist": {
+                "url": "https://github.com/arshaw/fullcalendar/releases/download/v1.6.0/fullcalendar-1.6.0.zip",
+                "type": "zip"
+            }
+        }
     }
   ],  
   "require": {
     "php": ">=5.3.0",
     "oomphinc/composer-installers-extender": "^1.1",
+    "arshaw/fullcalendar": "v1.6.0",
     "drupal/fullcalendar": "2.0"
   },
   "extra": {
