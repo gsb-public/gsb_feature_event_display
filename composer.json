@@ -16,18 +16,6 @@
                "reference": "master"
             }
         }
-    },
-    {
-        "type": "package",
-        "package": {
-            "name": "arshaw/fullcalendar",
-            "version": "v1.6.0",
-            "type": "vcs", 
-            "dist": {
-                "url": "https://github.com/arshaw/fullcalendar/releases/download/v1.6.0/fullcalendar-1.6.0.zip",
-                "type": "zip"
-            }
-        }
     }
   ],  
   "require": {
