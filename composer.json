@@ -33,7 +33,7 @@
   "require": {
     "php": ">=5.3.0",
     "oomphinc/composer-installers-extender": "^1.1",
-    "icalcreator/icalcreator": "master#579ee62eb",
+    "icalcreator/icalcreator": "dev-master#579ee62eb",
     "arshaw/fullcalendar": "v1.6.0",
     "drupal/fullcalendar": "2.0"
   },
